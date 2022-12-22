@@ -1,16 +1,13 @@
+import { ReactElement } from "react";
 import "./Main.css";
-import Title1 from "./Title1";
 
-function Body() {
+const Main: React.FC<{children: ReactElement}> = ({children}) => {
     
     return ( 
         <main className="main-content">
-            <div>smaple1</div>
-            <div>
-                <Title1 name={"João"} ></Title1>
-            </div>
+            {children}
         </main> 
     );
 }
 
-export default Body;
+export default Main;

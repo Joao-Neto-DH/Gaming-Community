@@ -4,6 +4,7 @@ import './App.css';
 import Main from './components/Main';
 import Carousel from './components/Carousel';
 import Header from './components/Header';
+import Title1 from './components/Title1';
 
 function App() {
   var [count, setCount] = useState(0);
@@ -11,7 +12,9 @@ function App() {
     <>
       <Header/>
       <Carousel/>
-      <Main></Main>
+      <Main>
+        <Title1>Something</Title1>
+      </Main>
       <p>Count {count}</p>
       <button onClick={()=>{
         setCount(i => ++i)
