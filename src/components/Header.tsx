@@ -10,12 +10,14 @@ function Header() {
     return ( 
         <header className="header">
             <div className="header-inner">
-                <h1 className="brand">LOGO</h1>
-                <nav className="nav-items">
-                    <ul>
-                        {links.map((value, index)=><li key={index}><a href={value.title}>{value.title}</a></li>)}
-                    </ul>
-                </nav>
+                <div className="header-content">
+                    <h1 className="brand">LOGO</h1>
+                    <nav className="nav-items">
+                        <ul>
+                            {links.map((value, index)=><li key={index}><a href={value.title}>{value.title}</a></li>)}
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </header> 
     );

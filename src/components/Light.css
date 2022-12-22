@@ -24,7 +24,9 @@
 
 }
 @keyframes animate-light{
+
     0%, 100%{bottom: 0;opacity: 1;}
-    25%, 75%{opacity: .4;}
+    10%,30%,70%,90%{opacity: 0;}
+    20%,40%,60%,80%{opacity: 1;}
     50%{bottom: 100%;opacity: 1;}
 }
