@@ -2,7 +2,8 @@ import { ReactElement } from "react";
 import "./Main.css";
 
 const Main: React.FC<{children: ReactElement}> = ({children}) => {
-    return (
+    
+    return ( 
         <div className="main-content">
             <main>
                 {children}
@@ -10,8 +11,8 @@ const Main: React.FC<{children: ReactElement}> = ({children}) => {
             <aside>
                 {children}
             </aside>
-        </div>
-    )
+        </div> 
+    );
 }
 
 export default Main;
