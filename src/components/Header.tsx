@@ -6,7 +6,12 @@ interface MenuItem{
 }
 
 function Header() {
-    var links : Array<MenuItem> = [{title:"HOME"},{title:"HOME"},{title:"LOGIN"},{title:"HOME"}];
+    var links : Array<MenuItem> = [
+        {title:"HOME",link:"/"},
+        {title:"HOME",link:"/categories"},
+        {title:"LOGIN",link:"/signin"},
+        {title:"HOME",link:"/signup"}
+    ];
     return ( 
         <header className="header">
             <div className="header-inner">
@@ -14,7 +19,13 @@ function Header() {
                     <h1 className="brand">LOGO</h1>
                     <nav className="nav-items">
                         <ul>
-                            {links.map((value, index)=><li key={index}><a href={value.title}>{value.title}</a></li>)}
+                            {
+                                links.map(
+                                    (value, index) => <li key={index}>
+                                        <a href={value.link} className={document.location.pathname ===value.link ? "active":""}>{value.title}</a>
+                                    </li>
+                                )
+                            }
                         </ul>
                     </nav>
                 </div>

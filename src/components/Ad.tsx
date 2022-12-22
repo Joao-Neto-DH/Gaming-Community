@@ -8,11 +8,12 @@ const Ad: React.FC<{}> = ()=>{
             <div className="ad-content">
                 <div className="ad-header">
                     <h3 className="ad-title">God Of War - Ragnarok</h3>
-                    <p className="ad-subtitle">22/12/2022</p>
+                    <p className="ad-subtitle">Lançamento: 22/12/2022</p>
                     <ul className="ad-category">
                         <li>Acção</li>
                         <li>Aventura</li>
                         <li>Sobrevivência</li>
+                        <li>Luta</li>
                     </ul>
                 </div>
                 <div className="ad-body">
