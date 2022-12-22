@@ -6,6 +6,7 @@ import Carousel from './components/Carousel';
 import Header from './components/Header';
 import Title1 from './components/Title1';
 import Container from './components/Container';
+import Ad from './components/Ad';
 
 function App() {
   var [count, setCount] = useState(0);
@@ -26,16 +27,16 @@ function App() {
           <main style={{width:"100%"}}>
             <Container style={styleContainer}>
               <>
-                <Title1>Something</Title1>
-                <Title1>Something</Title1>
-                <Title1>Something</Title1>
-                <Title1>Something</Title1>
+                <Title1 align="center">Jogos Mais Procurados</Title1>
+                <Ad></Ad>
               </>
             </Container>
           </main>
           <aside>
             <Container style={styleContainer}>
-              <Title1>Something</Title1>
+              <>
+                <Title1>Something</Title1>
+              </>
             </Container>
           </aside>
         </>

@@ -1,0 +1,38 @@
+.ad{
+    display: flex;
+    flex-direction: row;
+}
+.ad > .ad-img{
+    width: auto;
+    height: 450px;
+    position: relative;
+    left: -10%;
+}
+.ad > .ad-content{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    left: -5%;
+}
+.ad-content > .ad-header{
+    padding: 0.5rem 0;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+.ad-header .ad-title{
+    margin: 0;
+    font-size: 1.375rem;
+    line-height: 1;
+    text-transform: capitalize;
+}
+.ad-header .ad-subtitle{
+    font-size: 0.75rem;
+    font-style: italic;
+    color: rgba(36, 36, 36, 0.5);
+}
+.ad-content .ad-body{
+    line-height: 1.6;
+}
