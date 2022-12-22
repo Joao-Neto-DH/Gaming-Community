@@ -1,0 +1,30 @@
+.light{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    border-radius: 50%;
+    filter: blur(10px);
+    
+    /* animation-name: animate-light;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-duration: 2s; */
+
+    animation-name: animate-light;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-duration: 24s;
+    animation-direction: alternate;
+}
+
+@keyframes animate-light{
+    0%, 100%{opacity: 1;}
+    50%{opacity: 0}
+
+}
+@keyframes animate-light{
+    0%, 100%{bottom: 0;opacity: 1;}
+    25%, 75%{opacity: .4;}
+    50%{bottom: 100%;opacity: 1;}
+}

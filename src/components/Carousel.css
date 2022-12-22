@@ -1,0 +1,74 @@
+.carousel{
+    position: relative;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    /* z-index: 1; */
+    width: 100%;
+    /* width: 100vw; */
+}
+.carousel > .carousel-inner{
+    width: 100%;
+    position: relative;
+}
+.carousel-inner > img{
+    width: 100%;
+}
+.carousel-info{
+    color: white;
+    line-height: 1.2;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.carousel-info > h2{
+    font-size: 2.5rem;
+}
+.btn{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 0.875rem;
+    padding: 1rem 1.5rem;
+    position: relative;
+}
+.btn.btn-carousel{
+    margin-top: 30px;
+    border-radius: 20px;
+    /* box-shadow: 0 0 24px #ae08f3; */
+    
+    background-image: linear-gradient(to left, #ae08f3, #4a07eb, #0ee9cf, #0ddf0d, #1313d7, #ae08f3);
+    background-size: 1000px;
+    animation-name: animate-background;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-duration: 10s;
+}
+.btn-carousel::before{
+    content: '';
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-image: linear-gradient(to left, #ae08f3, #4a07eb, #0ee9cf, #0ddf0d, #1313d7, #ae08f3);
+    background-size: 1000px;
+    animation-name: animate-background;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-duration: 10s;
+    z-index: -1;
+    filter: blur(16px);
+}
+@keyframes animate-background{
+    0%, 100%{
+        background-position: 0;
+    }
+    50%{
+        background-position: 1000px;
+    }
+}

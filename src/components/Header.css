@@ -1,0 +1,33 @@
+.header{
+    position: sticky;
+    top: 0;
+    display: block;
+    padding: 10px 30px;
+    background-color: rgba(255,255,255,.8);
+    box-shadow: 0 2px 6px rgba(0,0,0,.15);
+    z-index: 9999;
+}
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-inner > .brand{
+    font-size: 24px;
+}
+.nav-items > ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.nav-items li{
+    margin-left: 10px;
+}
+.nav-items a{
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+}
+.nav-items a:hover, .nav-items a.active{
+    color: orange;
+}
