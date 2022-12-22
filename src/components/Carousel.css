@@ -5,7 +5,7 @@
     left: 0;
     /* z-index: 1; */
     width: 100%;
-    /* width: 100vw; */
+    margin-bottom: 1.875rem;
 }
 .carousel > .carousel-inner{
     width: 100%;
