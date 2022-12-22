@@ -5,12 +5,7 @@ const Main: React.FC<{children: ReactElement}> = ({children}) => {
     
     return ( 
         <div className="main-content">
-            <main>
-                {children}
-            </main>
-            <aside>
-                {children}
-            </aside>
+            {children}
         </div> 
     );
 }

@@ -1,0 +1,8 @@
+.container{
+    display: block;
+    overflow: auto;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    background-color: rgb(241, 241, 241);
+}
