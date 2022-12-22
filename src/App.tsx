@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Title1 from './components/Title1';
 import Container from './components/Container';
 import Ad from './components/Ad';
+import Separator from './components/Separator';
 
 function App() {
   var [count, setCount] = useState(0);
@@ -27,8 +28,9 @@ function App() {
           <main style={{width:"100%"}}>
             <Container style={styleContainer}>
               <>
-                <Title1 align="center">Jogos Mais Procurados</Title1>
+                <Title1>Jogo Mais Falado Na Comunidade</Title1>
                 <Ad></Ad>
+                <Separator/>
               </>
             </Container>
           </main>
