@@ -2,12 +2,16 @@ import { ReactElement } from "react";
 import "./Main.css";
 
 const Main: React.FC<{children: ReactElement}> = ({children}) => {
-    
-    return ( 
-        <main className="main-content">
-            {children}
-        </main> 
-    );
+    return (
+        <div className="main-content">
+            <main>
+                {children}
+            </main>
+            <aside>
+                {children}
+            </aside>
+        </div>
+    )
 }
 
 export default Main;
