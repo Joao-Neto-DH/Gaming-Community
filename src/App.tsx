@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import Body from './components/Body';
+import Main from './components/Main';
 import Carousel from './components/Carousel';
 import Header from './components/Header';
 
@@ -11,7 +11,7 @@ function App() {
     <>
       <Header/>
       <Carousel/>
-      <Body></Body>
+      <Main></Main>
       <p>Count {count}</p>
       <button onClick={()=>{
         setCount(i => ++i)
