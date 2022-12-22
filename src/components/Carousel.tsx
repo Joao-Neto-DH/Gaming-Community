@@ -11,7 +11,7 @@ function Carousel() {
     return ( 
     <div className="carousel">
         <div className="carousel-inner">
-            <img src="/background.png" alt="logo" />
+            <img src="/assets/img/background.png" alt="logo" />
             <div className="carousel-info">
                 <h2>Something to say</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>

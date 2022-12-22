@@ -28,11 +28,43 @@
     line-height: 1;
     text-transform: capitalize;
 }
-.ad-header .ad-subtitle{
+.ad .ad-subtitle{
     font-size: 0.75rem;
     font-style: italic;
     color: rgba(36, 36, 36, 0.5);
 }
+.ad .ad-category{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    font-size: 0.625rem;
+    font-style: italic;}
+.ad-category > *{
+    padding: 2px 4px;
+    background-color: #ccc;
+}
 .ad-content .ad-body{
     line-height: 1.6;
+}
+.ad-content .ad-footer{
+    /* align-self: flex-end; */
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-ce;
+}
+.ad-content .profile-pic{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 20px;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+}
+.ad-footer p{
+    margin: 0;
+    font-size: 0.75rem;
 }
