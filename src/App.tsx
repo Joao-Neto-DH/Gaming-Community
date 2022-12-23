@@ -8,6 +8,7 @@ import Title1 from './components/Title1';
 import Container from './components/Container';
 import Ad from './components/Ad';
 import Separator from './components/Separator';
+import GameCard from './components/GameCard';
 
 function App() {
   var [count, setCount] = useState(0);
@@ -31,6 +32,7 @@ function App() {
                 <Title1>Jogo Mais Falado Na Comunidade</Title1>
                 <Ad></Ad>
                 <Separator/>
+                <GameCard/>
               </>
             </Container>
           </main>

@@ -1,0 +1,89 @@
+.card-game{
+    display: flex;
+    flex-direction: column;
+    max-width: 15.625rem;
+    background-color: whitesmoke;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
+}
+.card-game > .card-img{
+    width: 100%;
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+}
+.card-body{
+    padding: 0 0.625rem;
+}
+.card-header{
+    position: relative;
+}
+.card-header > .card-game-info{
+    padding: 0.625rem;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 140, 255);
+    font-family: fantasy, 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(calc(-50% - 8px));
+    opacity: 0.8;
+    transition: 0.3s;
+    background-image: radial-gradient(rgb(0, 89, 255), rgb(0, 183, 255));
+    /* background-image: radial-gradient(rgb(0, 225, 255), rgb(0, 140, 255)); */
+}
+.card-header > .card-game-info:hover{
+    opacity: 1;
+}
+.card-header > .card-title{
+    font-size: 1.125rem;
+    margin: 0.5rem 0;
+}
+.card-header > .card-stars{
+    /* display: flex; */
+    list-style: none;
+    padding: 0;
+    column-gap: 0.25rem;
+}
+.card-stars > *{
+    display: inline-block;
+    width: 1.5rem;
+    margin-right: 0.5rem;
+    opacity: .3;
+    cursor: pointer;
+}
+.card-stars > .active{
+    /* background-color: rgb(255, 166, 0); */
+    opacity: 1;
+}
+.card-body > .card-description{
+    font-size: 0.875rem;
+    font-style: italic;
+    font-stretch: condensed;
+    line-height: 1.5;
+    color: rgb(71, 71, 71);
+}
+.card-game > .card-footer{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+.card-footer > * {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid #ccc;
+    padding: 0.5rem 0;
+    font-size: 0.875rem;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    background-color: transparent;
+    transition: 0.3s;
+}
+.card-footer > *:not(:first-child){
+    border-left: 1px solid #ccc;
+}
+.card-footer > *:hover{
+    background-color: rgb(204, 204, 204);
+}
