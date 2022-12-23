@@ -30,6 +30,7 @@
     transform: translateY(calc(-50% - 8px));
     opacity: 0.8;
     transition: 0.3s;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
     background-image: radial-gradient(rgb(0, 89, 255), rgb(0, 183, 255));
     /* background-image: radial-gradient(rgb(0, 225, 255), rgb(0, 140, 255)); */
 }

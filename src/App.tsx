@@ -11,6 +11,7 @@ import Separator from './components/Separator';
 import GameCard from './components/GameCard';
 import Title2 from './components/Title2';
 import Streammer from './components/Streammer';
+import GameCardLoading from './components/GameCardLoading';
 
 function App() {
   var [count, setCount] = useState(0);
@@ -34,7 +35,12 @@ function App() {
                 <Title1>Jogo Mais Falado Na Comunidade</Title1>
                 <Ad></Ad>
                 <Separator/>
-                <GameCard/>
+                <div style={{display:"grid", gridTemplateColumns:"repeat(4, 1fr)",gap:"2rem", alignItems:"flex-start"}}>
+                  <GameCard/>
+                  <GameCardLoading/>
+                  <GameCardLoading/>
+                  <GameCardLoading/>
+                </div>
               </>
             </Container>
           </main>

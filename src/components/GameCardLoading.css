@@ -1,0 +1,42 @@
+.load *{
+    --bg-color-load: rgb(119, 119, 119);
+    background-size: 1000px;
+    background-position: 100%;
+    animation-name: loading;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+.load .card-img, .load .card-title, .load .card-description, .load .card-game-info, .load .card-footer > *{
+    background-image: linear-gradient(to right, var(--bg-color-load), rgb(167, 167, 167), var(--bg-color-load), rgb(167, 167, 167));
+}
+.load .card-img{
+    height: 200px;
+}
+.load .card-title{
+    width: 70%;
+    height: 24px;
+}
+.load .card-description{
+    width: 70%;
+    height: 24px;
+    margin-bottom: 4px;
+}
+.load .card-description:last-child{
+    width: 80%;
+}
+.load .card-game-info{
+    border: none;
+    width: 18px;
+    height: 18px;
+}
+.load .card-footer > *{
+    height: 12px;
+}
+@keyframes loading {
+    from{
+        background-position: 100%;
+    }
+    to{
+        background-position: 0;
+    }
+}
