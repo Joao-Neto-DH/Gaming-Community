@@ -9,6 +9,7 @@ import Container from './components/Container';
 import Ad from './components/Ad';
 import Separator from './components/Separator';
 import GameCard from './components/GameCard';
+import Title2 from './components/Title2';
 
 function App() {
   var [count, setCount] = useState(0);
@@ -39,7 +40,7 @@ function App() {
           <aside>
             <Container style={styleContainer}>
               <>
-                <Title1>Something</Title1>
+                <Title2>Something</Title2>
               </>
             </Container>
           </aside>
@@ -50,22 +51,6 @@ function App() {
         setCount(i => ++i)
       }}>add</button>
     </>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.tsx</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 
