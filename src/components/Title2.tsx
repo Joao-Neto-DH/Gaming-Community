@@ -1,6 +1,6 @@
-import { ReactElement } from "react";
+import { CSSProperties, ReactElement } from "react";
 
-const st: React.CSSProperties = {
+const st: CSSProperties = {
     display: "block",
     // width: "100%",
     padding: "0.875rem",
@@ -8,12 +8,12 @@ const st: React.CSSProperties = {
     // textAlign: "center"
 }
 
-const Title1: React.FC<{children: string | ReactElement, align?: "center" | "left" | "right"}> = ({children, align = "left"}) => {
+const Title2: React.FC<{children: string | ReactElement, align?: "center" | "left" | "right",styles?: CSSProperties}> = ({children, align = "left", styles}) => {
     return ( 
-        <h2 style={{textAlign: align, ...st}}>
+        <h2 style={{textAlign: align, ...st,...styles}}>
             {children}
         </h2>
      );
 }
 
-export default Title1;
+export default Title2;

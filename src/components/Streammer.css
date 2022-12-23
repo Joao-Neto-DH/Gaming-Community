@@ -1,0 +1,66 @@
+.streammer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.streammer-picture{
+    position: relative;
+}
+.streammer-picture > .streammer-img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+.streammer-picture > .streammer-img > img{
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.streammer.online > .streammer-picture::after,
+    .streammer.offline > .streammer-picture::after{
+    content: '';
+    width: 0.7rem;
+    height: 0.7rem;
+    position: absolute;
+    border: 1px solid whitesmoke;
+    border-radius: 50%;
+    right: 0;
+    bottom: 0;
+    transform: translate(10%,10%);
+}
+.streammer.online > .streammer-picture::after{
+    background-color: rgb(1, 150, 14);
+}
+.streammer.offline > .streammer-picture::after{
+    background-color: rgb(80, 80, 80);
+}
+.streammer > .streammer-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+.streammer-content > .streammer-name,
+.streammer-content > .streammer-playing{
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+.streammer-content > .streammer-name{
+    font-weight: bold;
+    font-size: 0.875rem;
+    margin: 0;
+}
+.streammer-content > .streammer-playing{
+    font-size: 0.625rem;
+    font-style: italic;
+    color: rgba(36, 36, 36, 0.5);
+}

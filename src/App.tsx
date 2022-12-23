@@ -10,6 +10,7 @@ import Ad from './components/Ad';
 import Separator from './components/Separator';
 import GameCard from './components/GameCard';
 import Title2 from './components/Title2';
+import Streammer from './components/Streammer';
 
 function App() {
   var [count, setCount] = useState(0);
@@ -37,11 +38,17 @@ function App() {
               </>
             </Container>
           </main>
-          <aside>
+          <aside style={{width:"16.875rem"}}>
             <Container style={styleContainer}>
-              <>
-                <Title2>Something</Title2>
-              </>
+              <div style={{padding:"0.5rem"}}>
+                <Title2 styles={{fontSize:"1.125rem", marginTop:"0", paddingLeft:"0",paddingTop:"0"}}>Streammers Parceiros</Title2>
+                <Streammer status="offline"/>
+                <Streammer status="online"/>
+                <Streammer status="offline"/>
+                <Streammer status="online"/>
+                <Streammer status="online"/>
+                <Streammer status="offline"/>
+              </div>
             </Container>
           </aside>
         </>
