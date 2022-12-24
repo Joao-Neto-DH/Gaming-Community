@@ -12,6 +12,7 @@ import GameCard from './components/GameCard';
 import Title2 from './components/Title2';
 import Streammer from './components/Streammer';
 import GameCardLoading from './components/GameCardLoading';
+import Newsletter from './components/Newsletter';
 
 function App() {
   var [count, setCount] = useState(0);
@@ -59,6 +60,8 @@ function App() {
           </aside>
         </>
       </Main>
+      
+      <Newsletter/>
       <p>Count {count}</p>
       <button onClick={()=>{
         setCount(i => ++i)

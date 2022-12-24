@@ -2,7 +2,7 @@ import { CSSProperties, useRef } from "react";
 import "./Light.css";
 
 function Light() {
-    function color():number{
+    function color(){
         return Math.min(Math.round(Math.random()*256), 255);
     }
 

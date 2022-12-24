@@ -1,14 +1,15 @@
+import React, { ReactElement } from "react";
 import "./Carousel.css";
 import Light from "./Light";
 
-function Carousel() {
-    var lights : Array<JSX.Element> = [];
+const Carousel = () => {
+    const lights : Array<ReactElement> = [];
 
     for (let index = 0; index < 16; index++) {
         lights[index] = <Light key={index}/>
-        
     }
-    return ( 
+    
+    return  (
     <div className="carousel">
         <div className="carousel-inner">
             <img src="/assets/img/background.png" alt="logo" />
@@ -22,6 +23,6 @@ function Carousel() {
         </div>
     </div> 
     );
-}
+};
 
 export default Carousel;

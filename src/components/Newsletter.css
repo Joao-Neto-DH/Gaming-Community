@@ -1,0 +1,64 @@
+.newsletter{
+    margin-top: 1.25rem;
+    background-image: url("/public/assets/img/gow.jpg");
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position-x: 450px;
+}
+.newsletter-inner{
+    padding: 3.75rem;
+    background-color: rgba(245, 245, 245, 0.72);
+}
+.newsletter-header{
+    margin-bottom: 1.5rem;
+}
+.newsletter-header .ad-title{
+    font-size: 2.075rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+.newsletter-header > p{
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #333;
+}
+.newsletter-form{
+    --fs: 0.875rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.newsletter-form > .newsletter-input{
+    font-size: var(--fs);
+    width: 100%;
+    border: 1px solid #ccc;
+    color: #222;
+}
+.newsletter-input:focus-visible{
+    outline-offset: 0;
+    outline-color: #222;
+}
+.newsletter-input:blank{
+    font-style: italic;
+}
+.newsletter-btn{
+    --color: #222;
+    background-color: var(--color);
+    border: 1px solid var(--color);
+    font-size: var(--fs);
+    cursor: pointer;
+    transition: .1s;
+}
+.newsletter-btn:hover{
+    --color: #333;
+    /* background-color: var(--color);
+    border-color: var(--colors); */
+}
+.newsletter-btn:focus-within{
+    outline: none;
+}
+.form-input{
+    background-color: transparent;
+    border: 0;
+    padding: 0.7rem;
+}
