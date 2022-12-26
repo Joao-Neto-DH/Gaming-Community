@@ -94,6 +94,7 @@
 }
 .chat-room-body > .sms{
     display: flex;
+    max-width: 70%;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: flex-start;
@@ -104,20 +105,23 @@
     opacity: 0.7;
     align-self: flex-end;
 }
-.sms > pre{
+.sms > div{
+    max-width: 100%;
+    word-wrap: break-word;
     margin: 0;
     margin-top: 0.5rem;
     padding: 0;
-    line-height: 1.2;
     padding: 0.8rem;
-    border-radius: 30px;
+
+    border-radius: 20px;
+    line-height: 1.2;
     background-color: #fff;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
 }
 .sms-owner{
     align-self: flex-end;
 }
-.sms-owner > pre{
+.sms-owner > div{
     color: #fff;
     background-color: #222;
 }

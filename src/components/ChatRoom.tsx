@@ -1,4 +1,4 @@
-import { CSSProperties, MouseEventHandler, useState } from "react";
+import { CSSProperties, MouseEventHandler, ReactElement, useState } from "react";
 import "./ChatRoom.css";
 
 function ChatRoom() {
@@ -12,6 +12,9 @@ function ChatRoom() {
     const closeChat: MouseEventHandler<HTMLButtonElement> = evt => {
         setClosed(value=>!value);
     };
+    function date() {
+        return new Date().toLocaleString().split(",")[0];
+    }
 
     return ( 
         <div className="chat-room" style={closed ? close : undefined}>
@@ -33,14 +36,9 @@ function ChatRoom() {
                 </div>
             </div>
             <div className="chat-room-body">
-                <div className="sms">
-                    <span className="time">{ new Date().toLocaleString().split(",")[0] }</span>
-                    <pre>something reallly good</pre>
-                </div>
-                <div className="sms sms-owner">
-                    <span className="time">{ new Date().toLocaleString().split(",")[0] }</span>
-                    <pre>something reallly good</pre>
-                </div>
+                <Message date={date()} owner={true}>hello</Message>
+                <Message date={date()} owner={true}>how are guys?😁</Message>
+                <Message date={date()}><div>hi stranger<br/>whatsap?</div></Message>
             </div>
             <div className="chat-room-footer">
                 <textarea 
@@ -54,5 +52,15 @@ function ChatRoom() {
         </div>
      );
 }
+
+const Message: React.FC<{children: string | ReactElement, owner?: boolean, date: string}> = ({ children, owner = false, date }) => {
+    const cn = `sms ${owner? "sms-owner":""}`;
+    return(
+        <div className={cn}>
+            <span className="time">{ new Date().toLocaleString().split(",")[0] }</span>
+            <div>{ children }</div>
+        </div>
+    );
+};
 
 export default ChatRoom;
