@@ -13,6 +13,7 @@ import Title2 from './components/Title2';
 import Streammer from './components/Streammer';
 import GameCardLoading from './components/GameCardLoading';
 import Newsletter from './components/Newsletter';
+import ChatRoom from './components/ChatRoom';
 
 function App() {
   var [count, setCount] = useState(0);
@@ -62,6 +63,7 @@ function App() {
       </Main>
       
       <Newsletter/>
+      <ChatRoom/>
       <p>Count {count}</p>
       <button onClick={()=>{
         setCount(i => ++i)

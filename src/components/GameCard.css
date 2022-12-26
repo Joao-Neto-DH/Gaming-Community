@@ -42,15 +42,13 @@
     margin: 0.5rem 0;
 }
 .card-header > .card-stars{
-    /* display: flex; */
     list-style: none;
     padding: 0;
-    column-gap: 0.25rem;
 }
 .card-stars > *{
     display: inline-block;
-    width: 1.5rem;
-    margin-right: 0.5rem;
+    width: 1rem;
+    margin-right: 0.2rem;
     opacity: .3;
     cursor: pointer;
 }
