@@ -46,6 +46,7 @@
 .ad-category > *{
     padding: 2px 4px;
     background-color: #ccc;
+    color: rgb(55,55,55);
     cursor: default;
 }
 .ad-content .ad-body{

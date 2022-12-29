@@ -16,6 +16,7 @@
     background-color: rgb(var(--font-color));
 }
 .footer-body .group-title{
+    color: rgb(var(--font-color));
     font-size: 1rem;
     font-weight: 600;
     margin: 0;
@@ -42,7 +43,7 @@
 }
 .footer-right{
     background-color: rgb(var(--primary-color));
-    color: #222;
+    color: rgb(var(--font-color));
     text-align: center;
     padding-top: 1.875rem;
     padding-bottom: 1.875rem;

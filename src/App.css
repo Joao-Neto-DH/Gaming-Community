@@ -1,9 +1,16 @@
-:root{
+:root, .light{
     scroll-behavior: smooth;
     --primary-color: 241, 241, 241;
-    --font-color: 36, 36, 36;
+    --font-color: 55, 55, 55;
     --fs-body:  0.875rem;
     --link-color: 255, 165, 0
+}
+*{
+    color: rgb(var(--font-color));
+}
+.dark{
+    --primary-color: 55, 55, 55;
+    --font-color: 241, 241, 241;
 }
 ::-webkit-scrollbar{
     background-color: rgba(var(--font-color), 0.3);
