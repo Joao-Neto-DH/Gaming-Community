@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import Main from './components/Main';
@@ -14,9 +13,9 @@ import Streammer from './components/Streammer';
 import GameCardLoading from './components/GameCardLoading';
 import Newsletter from './components/Newsletter';
 import ChatRoom from './components/ChatRoom';
+import Footer from './components/Footer';
 
 function App() {
-  var [count, setCount] = useState(0);
 
   const styleContainer: React.CSSProperties = {
     width: "90%", 
@@ -64,10 +63,7 @@ function App() {
       
       <Newsletter/>
       <ChatRoom/>
-      <p>Count {count}</p>
-      <button onClick={()=>{
-        setCount(i => ++i)
-      }}>add</button>
+      <Footer/>
     </>
   );
 }

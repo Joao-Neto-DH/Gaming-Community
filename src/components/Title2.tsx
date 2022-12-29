@@ -10,9 +10,9 @@ const st: CSSProperties = {
 
 const Title2: React.FC<{children: string | ReactElement, align?: "center" | "left" | "right",styles?: CSSProperties}> = ({children, align = "left", styles}) => {
     return ( 
-        <h2 style={{textAlign: align, ...st,...styles}}>
+        <h3 style={{textAlign: align, ...st,...styles}}>
             {children}
-        </h2>
+        </h3>
      );
 }
 
