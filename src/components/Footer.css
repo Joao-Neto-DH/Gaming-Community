@@ -4,7 +4,7 @@
 }
 .footer-body, .footer-right{
     padding: 3.75rem;
-    font-size: 0.875rem;
+    font-size: --fs-body;
 }
 .footer-body{
     display: flex;
@@ -12,10 +12,12 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 10px 10px;
-    color: whitesmoke;
-    background-color: #222;
+    color: rgb(var(--primary-color));
+    background-color: rgb(var(--font-color));
 }
 .footer-body .group-title{
+    font-size: 1rem;
+    font-weight: 600;
     margin: 0;
 }
 .footer-body ul{
@@ -28,7 +30,7 @@
     padding-left: 0;
 }
 .footer-body a{
-    color: whitesmoke;
+    color: rgb(var(--primary-color));
     text-decoration: none;
     opacity: 0.8;
 }
@@ -39,7 +41,7 @@
     color: orange;
 }
 .footer-right{
-    background-color: whitesmoke;
+    background-color: rgb(var(--primary-color));
     color: #222;
     text-align: center;
     padding-top: 1.875rem;

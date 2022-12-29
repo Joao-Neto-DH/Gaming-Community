@@ -31,7 +31,7 @@
 .ad .ad-subtitle{
     font-size: 0.75rem;
     font-style: italic;
-    color: rgba(36, 36, 36, 0.5);
+    color: rgba(var(--font-color) 0.5);
 }
 .ad .ad-category{
     padding: 0;

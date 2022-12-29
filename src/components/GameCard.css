@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     max-width: 15.625rem;
-    background-color: whitesmoke;
+    background-color: rgb(var(--primary-color));
     border-radius: 6px 6px 0 0;
     box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
 }
@@ -23,7 +23,7 @@
     border: 1px solid rgb(0, 140, 255);
     font-family: fantasy, 'Courier New', Courier, monospace;
     font-style: italic;
-    color: white;
+    color: rgb(var(--primary-color));
     position: absolute;
     top: 0;
     right: 0;
@@ -57,11 +57,11 @@
     opacity: 1;
 }
 .card-body > .card-description{
-    font-size: 0.875rem;
+    font-size: --fs-body;
     font-style: italic;
     font-stretch: condensed;
     line-height: 1.5;
-    color: rgb(71, 71, 71);
+    color: rgb(var(--font-color));/*71, 71, 71*/
 }
 .card-game > .card-footer{
     display: flex;
@@ -73,7 +73,7 @@
     border: none;
     border-top: 1px solid #ccc;
     padding: 0.5rem 0;
-    font-size: 0.875rem;
+    font-size: --fs-body;
     cursor: pointer;
     text-overflow: ellipsis;
     overflow-x: hidden;

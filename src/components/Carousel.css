@@ -15,7 +15,7 @@
     width: 100%;
 }
 .carousel-info{
-    color: white;
+    color: rgb(var(--primary-color));
     line-height: 1.2;
     text-align: center;
     position: absolute;
@@ -28,9 +28,9 @@
 }
 .btn{
     display: inline-block;
-    color: white;
+    color: rgb(var(--primary-color));
     text-decoration: none;
-    font-size: 0.875rem;
+    font-size: --fs-body;
     padding: 1rem 1.5rem;
     position: relative;
 }

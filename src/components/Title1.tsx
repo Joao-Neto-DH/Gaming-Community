@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 const st: React.CSSProperties = {
     display: "block",
     // width: "100%",
-    padding: "0.875rem",
+    padding: "--fs-body",
     fontSize: "1.625rem"
     // textAlign: "center"
 }

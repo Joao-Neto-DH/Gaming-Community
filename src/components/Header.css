@@ -11,7 +11,7 @@
     z-index: 9999;
     position: fixed;
     top: 0;
-    background-color: rgba(255,255,255,.8);
+    background-color: rgba(var(--primary-color),.8);
     box-shadow: 0 2px 6px rgba(0,0,0,.15);
 }
 .header-inner > .header-content{
@@ -32,10 +32,10 @@
     margin-left: 10px;
 }
 .nav-items a{
-    color: black;
+    color: var(--font-color);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: var(--fs-body);
 }
 .nav-items a:hover, .nav-items a.active{
-    color: orange;
+    color: rgb(var(--link-color));
 }
