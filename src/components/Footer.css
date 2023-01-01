@@ -16,7 +16,7 @@
     background-color: rgb(var(--font-color));
 }
 .footer-body .group-title{
-    color: rgb(var(--font-color));
+    color: rgb(var(--primary-color));
     font-size: 1rem;
     font-weight: 600;
     margin: 0;

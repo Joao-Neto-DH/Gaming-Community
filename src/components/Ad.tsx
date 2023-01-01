@@ -4,7 +4,7 @@ import "./Ad.css";
 const Ad: React.FC<{}> = ()=>{
     return (
         <div className="ad">
-            <img src="/assets/img/gow.jpg" alt="Ad image" className="ad-img" />
+            <img src="/assets/img/gow.jpg" alt="God of war" className="ad-img" />
             <div className="ad-content">
                 <div className="ad-header">
                     <h3 className="ad-title">God Of War - Ragnarok</h3>
