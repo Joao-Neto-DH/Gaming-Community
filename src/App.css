@@ -1,4 +1,4 @@
-:root, .light{
+:root, .theme-light{
     scroll-behavior: smooth;
     --primary-color: 241, 241, 241;
     --font-color: 55, 55, 55;
@@ -8,7 +8,7 @@
 *{
     color: rgb(var(--font-color));
 }
-.dark{
+.theme-dark{
     --primary-color: 55, 55, 55;
     --font-color: 241, 241, 241;
 }
