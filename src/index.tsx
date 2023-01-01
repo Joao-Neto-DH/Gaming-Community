@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import { route, RouterProvider } from './App';
 import reportWebVitals from './reportWebVitals';
-import ContextComponent from './sample/context/ContextComponent';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,8 +10,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    {/* <ContextComponent/> */}
-    <App />
+    <RouterProvider router={route}/>
   </React.StrictMode>
 );
 
