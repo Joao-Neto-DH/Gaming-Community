@@ -11,7 +11,13 @@ import MainPage from './pages/MainPage';
 const route = createBrowserRouter([
   {
     path:"/",
-    element: <MainPage>d</MainPage>
+    element: <MainPage/>,
+    children: [
+      {
+        path: "/",
+        element: <HomePage/>
+      }
+    ]
   }
 ]);
 

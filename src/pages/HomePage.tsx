@@ -2,11 +2,9 @@ import Ad from "../components/Ad";
 import Carousel from "../components/Carousel";
 import ChatRoom from "../components/ChatRoom";
 import Container from "../components/Container";
-import Footer from "../components/Footer";
 import GameCard from "../components/GameCard";
 import GameCardLoading from "../components/GameCardLoading";
 import Main from "../components/Main";
-import Newsletter from "../components/Newsletter";
 import Separator from "../components/Separator";
 import Streammer from "../components/Streammer";
 import Title1 from "../components/Title1";
@@ -56,9 +54,7 @@ function HomePage() {
             </>
             </Main>
             
-            <Newsletter/>
             <ChatRoom/>
-            <Footer/>
         </>
      );
 }

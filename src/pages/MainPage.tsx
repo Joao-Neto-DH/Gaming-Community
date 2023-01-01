@@ -1,11 +1,15 @@
-import { ReactNode } from "react";
+import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Newsletter from "../components/Newsletter";
 
-const MainPage: React.FC<{children: ReactNode}> = ({children})=>{
+function MainPage(){
     return(
         <>
             <Header/>
-            { children }
+            <Outlet/>
+            <Newsletter/>
+            <Footer/>
         </>
     );
 }
