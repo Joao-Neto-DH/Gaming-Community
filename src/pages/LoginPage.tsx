@@ -36,18 +36,18 @@ const LoginPage: React.FC<{}> = ()=>{
                                 <hr />
                                 <form method="post">
                                     <div className="input-box invalid">
-                                        <label htmlFor="email">
+                                        <label htmlFor="email2">
                                             Email
                                         </label>
-                                        <input type="email" name="email" id="email" required />
+                                        <input type="email" name="email" id="email2" required />
                                     </div>
                                     <div className="input-box">
-                                        <label htmlFor="password">Senha</label>
-                                        <input type="password" name="password" id="password" required/>
+                                        <label htmlFor="password2">Senha</label>
+                                        <input type="password" name="password" id="password2" required/>
                                     </div>
                                     <a href="/login/password/recovery">Esqueci a senha</a>
                                     <button type="submit" className="btn">Entrar</button>
-                                    <button type="button" className="btn" onClick={changeLoginForm}>Criar Conta</button>
+                                    <button type="button" className="btn secondary" onClick={changeLoginForm}>Criar Conta</button>
                                 </form>
                                 <div className="or-divider">
                                     <hr />
@@ -90,7 +90,7 @@ const LoginPage: React.FC<{}> = ()=>{
                                         <input type="password" name="password-confirm" id="password-confirm" required/>
                                     </div>
                                     <button type="submit" className="btn">Entrar</button>
-                                    <button type="button" className="btn" onClick={changeLoginForm}>Já tenho uma conta</button>
+                                    <button type="button" className="btn secondary" onClick={changeLoginForm}>Já tenho uma conta</button>
                                 </form>
                                 <div className="or-divider">
                                     <hr />

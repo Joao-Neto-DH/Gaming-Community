@@ -1,11 +1,35 @@
 body{
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    background-image: url("../../public/assets/img/mario.jpg"), url("../../public/assets/img/gow.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+body::before{
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(var(--primary-color), 0.85);
+    background-attachment: fixed;
+    z-index: -10;
 }
 .login-content{
-    position: absolute;
-    top: 50%;
+    display: inline-block;
+    /* position: relative; */
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: 2rem;
+    /* transform: translate(-50%, 0); */
+    box-shadow: 0 0 0.5rem rgba(33, 191, 240,1);
+}
+.login-content .container{
+    background-color: rgba(var(--primary-color), 0.9);
+    box-shadow: 0 0 0.5rem rgb(20,20,20, 0.5);
+    border-radius: 4px;
 }
 .login-content .login-inner{
     position: relative;
@@ -87,6 +111,13 @@ body{
     border-radius: 3px;
     transition: 300ms;
     cursor: pointer;
+}
+.btn.secondary{
+    background-color: transparent;
+    color: rgb(var(--font-color));
+}
+.btn.secondary:hover{
+    background-color: transparent !important;
 }
 .login-content .btn:hover{
     background: rgb(var(--font-color), 1);
