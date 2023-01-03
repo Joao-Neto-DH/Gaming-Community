@@ -2,7 +2,7 @@ import { MouseEventHandler, ReactElement, useState } from "react";
 import "./GameCard.css";
 
 function GameCard() {
-    const [starsSelected, setStarsSelected] = useState(3);
+    const [starsSelected, setStarsSelected] = useState(2);
 
     let stars = new Array<ReactElement<HTMLOrSVGElement>>();
     function star(): ReactElement<HTMLLIElement>{
@@ -30,7 +30,7 @@ function GameCard() {
             <img src="/assets/img/gow.jpg" alt="God of War" className="card-img"/>
             <div className="card-body">
                 <div className="card-header">
-                    <h4 className="card-title">God of War</h4>
+                    <h4 className="card-title"><a href="/game">God of War</a></h4>
                     <ul className="card-stars">
                         { stars.map((str, i)=><li key={i} className={(starsSelected>=i)?"active":""} onClick={turnON}>{str}</li>) }
                     </ul>

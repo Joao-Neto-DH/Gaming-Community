@@ -1,0 +1,22 @@
+.cover{
+    height: 75vh;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+.cover::after{
+    content: "";
+    width: calc(100% - 40px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: 20px solid transparent;
+    border-bottom: 20px solid rgb(var(--primary-color));
+}
+.cover > img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

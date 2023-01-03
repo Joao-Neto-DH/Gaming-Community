@@ -8,6 +8,7 @@ import {
 import HomePage from './pages/HomePage';
 import MainPage from './pages/MainPage';
 import ErrorPage from './pages/ErrorPage';
+import GamePage from './pages/GamePage';
 
 const route = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const route = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage/>
+  },
+  {
+    path:"/game",
+    element: <GamePage/>
   }
 ]);
 

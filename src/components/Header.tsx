@@ -19,10 +19,10 @@ function Header() {
     }
 
     const links : Array<MenuItem> = [
-        {title:"HOME",link:"/"},
-        {title:"HOME",link:"/categories"},
+        {title:"COMUNIDADE",link:"/"},
+        {title:"GAME",link:"/game"},
         {title:"LOGIN",link:"/login"},
-        {title:"HOME",link:"/signup"}
+        // {title:"HOME",link:"/signup"}
     ];
     return ( 
         <header className="header">
