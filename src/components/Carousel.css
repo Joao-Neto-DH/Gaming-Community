@@ -7,6 +7,15 @@
     width: 100%;
     margin-bottom: 1.875rem;
 }
+.carousel::after{
+    content: "";
+    width: calc(100% - 40px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: 20px solid transparent;
+    border-bottom: 20px solid rgb(var(--primary-color));
+}
 .carousel > .carousel-inner{
     width: 100%;
     position: relative;
