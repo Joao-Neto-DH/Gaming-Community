@@ -15,6 +15,7 @@
 ::-webkit-scrollbar{
     background-color: rgba(var(--font-color), 0.3);
     width: 8px;
+    height: 8px;
 }
 ::-webkit-scrollbar:hover{
     background-color: rgba(var(--font-color), 0.5);
