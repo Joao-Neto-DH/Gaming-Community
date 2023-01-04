@@ -124,9 +124,51 @@ function GamePage() {
                             <>
                                 <Title2>Comentários</Title2>
                                 <Form className="comment-form">
-                                    <textarea name="commentary" id="commentary" rows={10} required></textarea>
+                                    <textarea name="comment" id="comment" rows={10} required></textarea>
                                     <button type="submit" className="btn">Comentar</button>
                                 </Form>
+                                <Separator />
+                                <div className="comment-section">
+                                    <div className="comment">
+                                        <div className="comment-header">
+                                            <img src="/logo192.png" alt="comment" className="comment-img" />
+                                            <span>04/01/2023</span>
+                                        </div>
+                                        <div className="comment-body">
+                                            <div>
+                                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
+                                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
+                                                <div className="comment-footer">
+                                                    <a href="/">Responder</a>
+                                                    <button type="button" className="btn">👍</button>
+                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <div className="comment">
+                                                            <div className="comment-header">
+                                                                <img src="/logo192.png" alt="comment" className="comment-img" />
+                                                                <span>04/01/2023</span>
+                                                            </div>
+                                                            <div className="comment-body">
+                                                                <div>
+                                                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
+                                                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
+                                                                    <div className="comment-footer">
+                                                                        <a href="/">Responder</a>
+                                                                        <button type="button" className="btn">👍</button>
+                                                                    </div>
+                                                                    <ul>
+                                                                        
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </>
                         </Container>
                     </main>
