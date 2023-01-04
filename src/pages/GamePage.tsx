@@ -22,6 +22,9 @@ function GamePage() {
             <div className="cover">
                 <img src="/assets/img/gow.jpg" alt="God of war" />
                 <h2 className="game-title">God Of war</h2>
+                <div className="classification-game">
+                    <span>16</span>
+                </div>
             </div>
             <Main>
                 <>
@@ -50,6 +53,7 @@ function GamePage() {
                             <div className="game-imgs">
                                 <img key={0} src="/assets/img/gow.jpg" alt="gow" className="game-img" />
                                 <img key={1} src="/assets/img/fortnite.jpg" alt="gow" className="game-img" />
+                                <img key={2} src="/assets/img/mario.jpg" alt="gow" className="game-img" />
                             </div>
                             <Separator/>
                             <div className="details">
@@ -89,6 +93,7 @@ function GamePage() {
                                     </ul>
                                 </div>
                             </div>
+                            <Separator />
                         </>
                     </Container>
                 </>
