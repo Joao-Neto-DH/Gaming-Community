@@ -5,6 +5,7 @@ import Main from "../components/Main";
 import Separator from "../components/Separator";
 import Streammer from "../components/Streammer";
 import Title1 from "../components/Title1";
+import Title2 from "../components/Title2";
 import "./GamePage.css";
 
 const asideStyle: CSSProperties = {
@@ -56,11 +57,11 @@ function GamePage() {
                                 <img key={2} src="/assets/img/mario.jpg" alt="gow" className="game-img" />
                             </div>
                             <Separator/>
-                            <div className="details">
+                            <div className="details box">
                                 <div>
-                                    <Title1>
+                                    <Title2>
                                         Plataformas
-                                    </Title1>
+                                    </Title2>
                                     <ul>
                                         <li key={0}>
                                             💻 Windows 7/8/8.1/10/11
@@ -71,9 +72,9 @@ function GamePage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <Title1>
+                                    <Title2>
                                         Requesitos
-                                    </Title1>
+                                    </Title2>
                                     <ul>
                                         <li key={3}>Computador: i5 @3.0Ghz</li>
                                         <li key={4}>Placa gráfica: AMD Radeon HD - 1GB</li>
@@ -82,9 +83,9 @@ function GamePage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <Title1>
+                                    <Title2>
                                         Recomendado
-                                    </Title1>
+                                    </Title2>
                                     <ul>
                                         <li key={3}>Computador: i5 @3.0Ghz</li>
                                         <li key={4}>Placa gráfica: AMD Radeon HD - 1GB</li>
@@ -94,6 +95,27 @@ function GamePage() {
                                 </div>
                             </div>
                             <Separator />
+                            <div className="box" style={{display:"flex",flexDirection:"column"}}>
+                                <Title2>
+                                    Descrição
+                                </Title2>
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure maiores laborum quas nesciunt nihil, praesentium aliquam mollitia perferendis. Maxime eaque sunt, dolorem rem architecto doloremque repellat tempore distinctio? Alias, aperiam.
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, rem minima! Perspiciatis officia veritatis dolorem. Sit nam voluptates, eaque dolor esse repellat magni repellendus perferendis laboriosam id nihil! Mollitia, ea?
+                                </p>
+                                <figure className="img-text">
+                                    <img src="/assets/img/gow.jpg" alt="gow" />
+                                    <figcaption>Fonte: GameVicio</figcaption>
+                                </figure>
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure maiores laborum quas nesciunt nihil, praesentium aliquam mollitia perferendis. Maxime eaque sunt, dolorem rem architecto doloremque repellat tempore distinctio? Alias, aperiam.
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, rem minima! Perspiciatis officia veritatis dolorem. Sit nam voluptates, eaque dolor esse repellat magni repellendus perferendis laboriosam id nihil! Mollitia, ea?
+                                </p>
+                            </div>
                         </>
                     </Container>
                 </>

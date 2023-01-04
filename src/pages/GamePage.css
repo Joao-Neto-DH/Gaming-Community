@@ -117,17 +117,36 @@
     width: auto;
     height: 180px;
 }
+.box{
+    padding: 0 30px;
+}
+.box h3{
+    margin-top: 0;
+}
+.box p{
+    margin: 0 0 12px;
+    line-height: 2;
+}
 .details{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 52px;
-    padding: 0 10px;
-}
-.details h2{
-    margin-top: 0;
+    /* padding: 0 10px; */
 }
 .details ul{
     padding-left: 20px;
     list-style-type: square;
+}
+.img-text{
+    display: inline-block;
+    margin: 1.5rem auto;
+    text-align: center;
+    font-style: italic;
+}
+.img-text > img{
+    width: auto;
+    max-height: 300px;
+    border-radius: 6px;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
