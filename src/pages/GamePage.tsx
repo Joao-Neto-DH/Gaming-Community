@@ -21,6 +21,7 @@ function GamePage() {
         <>
             <div className="cover">
                 <img src="/assets/img/gow.jpg" alt="God of war" />
+                <h2 className="game-title">God Of war</h2>
             </div>
             <Main>
                 <>

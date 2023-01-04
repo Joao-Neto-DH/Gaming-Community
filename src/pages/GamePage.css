@@ -20,6 +20,31 @@
     left: 50%;
     transform: translateX(-50%);
 }
+.cover > .game-title{
+    position: absolute;
+    padding: 10px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    background-color: rgb(var(--primary-color));
+}
+.cover > .game-title::after, .cover > .game-title::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 38px solid transparent;
+    border-bottom: 38px solid rgb(var(--primary-color));
+}
+.cover > .game-title::before{
+    left: 0;
+    transform: translate(-49%, 20%) rotate(135deg);
+}
+.cover > .game-title::after{
+    right: 0;
+    transform: translate(49%, 20%) rotate(-135deg);
+
+}
 .search-form{
     position: sticky;
     top: 0;
