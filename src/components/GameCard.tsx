@@ -4,8 +4,8 @@ import "./GameCard.css";
 function GameCard() {
     const [starsSelected, setStarsSelected] = useState(2);
 
-    let stars = new Array<ReactElement<HTMLOrSVGElement>>();
-    function star(): ReactElement<HTMLLIElement>{
+    let stars = new Array<ReactElement<HTMLOrSVGElement>>(5).fill(star());
+    function star(): ReactElement{
         return (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g>
@@ -16,7 +16,7 @@ function GameCard() {
         );
     }
 
-    for(let i = 0; i < 5; i++) stars.push(star());
+    // for(let i = 0; i < 5; i++) stars.push(star());
 
     const turnON: MouseEventHandler<HTMLLIElement> = (evt)=>{
         evt.currentTarget.parentElement?.childNodes.forEach((li,i)=>{
