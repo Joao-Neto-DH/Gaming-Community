@@ -122,7 +122,7 @@ function GamePage() {
 
                         <Container style={{marginTop: "4rem", padding:"2rem"}}>
                             <>
-                                <Title2>Comentários</Title2>
+                                <Title2 styles={{marginTop:"0"}}>Comentários</Title2>
                                 <Form className="comment-form">
                                     <textarea name="comment" id="comment" rows={10} required></textarea>
                                     <button type="submit" className="btn">Comentar</button>

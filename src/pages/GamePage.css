@@ -119,6 +119,7 @@
 }
 .box{
     padding: 0 30px;
+    font-weight: 300;
 }
 .box h3{
     margin-top: 0;
@@ -179,6 +180,7 @@
 }
 .comment-section{
     margin-top: 2rem;
+    font-weight: 300;
 }
 .comment{
     display: flex;
