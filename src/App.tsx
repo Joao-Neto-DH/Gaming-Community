@@ -18,6 +18,10 @@ const route = createBrowserRouter([
       {
         path: "/",
         element: <HomePage/>
+      },
+      {
+        path:"/game",
+        element: <GamePage/>
       }
     ],
     errorElement: <ErrorPage/>
@@ -26,10 +30,6 @@ const route = createBrowserRouter([
     path: "/login",
     element: <LoginPage/>
   },
-  {
-    path:"/game",
-    element: <GamePage/>
-  }
 ]);
 
 

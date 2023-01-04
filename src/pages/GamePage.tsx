@@ -1,17 +1,23 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Newsletter from "../components/Newsletter";
+import Container from "../components/Container";
+import Main from "../components/Main";
 import "./GamePage.css";
 
 function GamePage() {
     return ( 
         <>
-            <Header/>
-                <div className="cover">
-                    <img src="/assets/img/gow.jpg" alt="God of war" />
-                </div>
-            <Newsletter/>
-            <Footer/>
+            <div className="cover">
+                <img src="/assets/img/gow.jpg" alt="God of war" />
+            </div>
+            <Main>
+                <>
+                    <Container style={{position:"sticky",top:0}}>
+                        <span>olas</span>
+                    </Container>
+                    <Container>
+                        <span>b</span>
+                    </Container>
+                </>
+            </Main>
         </>
      );
 }
