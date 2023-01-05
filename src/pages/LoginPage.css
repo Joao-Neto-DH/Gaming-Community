@@ -22,6 +22,7 @@ body::before{
     /* position: relative; */
     top: 0;
     left: 50%;
+    margin: 15px 0;
     margin-left: 2rem;
     /* transform: translate(-50%, 0); */
     box-shadow: 0 0 0.5rem rgba(33, 191, 240,1);
@@ -38,8 +39,10 @@ body::before{
     position: absolute;
     top: 0;
     right: -100%;
-    transition: 500ms;
+    height: 0;
     opacity: 0;
+    overflow: hidden;
+    transition: 500ms;
     visibility: hidden;
 }
 .login-form.active{
@@ -47,8 +50,8 @@ body::before{
     top:0;
     right: 0;
     opacity: 1;
+    height: auto;
     visibility: visible;
-    
 }
 .login-content h2{
     text-align: center;
