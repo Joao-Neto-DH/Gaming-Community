@@ -96,6 +96,43 @@
     box-shadow: inset 0 0 0.25rem rgba(0, 0, 0, 0.2);
     outline: none;
 }
+.game{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin-bottom: 30px;
+    column-gap: 20px;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+.game:last-child{
+    margin-bottom: 0;
+}
+.game .game-body{
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+}
+.game-body span{
+    font-size: 0.75rem;
+}
+.game .game-img{
+    width: 47px;
+    height: 47px;
+    border-radius: 6px;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid whitesmoke;
+}
+.game .game-img > img{
+    width: auto;
+    height: 47px;
+}
 .btn{
     background-color: rgb(var(--primary-color));
     border: none;
@@ -121,7 +158,7 @@
     padding: 0 30px;
     font-weight: 300;
 }
-.box h3{
+.box:not(.not) h3{
     margin-top: 0;
 }
 .box p{

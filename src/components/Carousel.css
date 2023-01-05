@@ -79,6 +79,7 @@
     font-size: --fs-body;
     padding: 1rem 1.5rem;
     position: relative;
+    cursor: pointer;
 }
 .btn.btn-carousel{
     color: white;

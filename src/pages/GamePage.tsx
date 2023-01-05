@@ -3,8 +3,6 @@ import { Form } from "react-router-dom";
 import Container from "../components/Container";
 import Main from "../components/Main";
 import Separator from "../components/Separator";
-import Streammer from "../components/Streammer";
-import Title1 from "../components/Title1";
 import Title2 from "../components/Title2";
 import "./GamePage.css";
 
@@ -32,7 +30,7 @@ function GamePage() {
                     <aside>
                         <Container style={asideStyle}>
                             <>
-                                <Form method="get" className="search-form">
+                                <Form method="get" className="search-form" style={{marginBottom:"20px"}}>
                                     <div className="search-form-inner">
                                         <button type="button" className="btn">
                                             Filtrar
@@ -43,7 +41,8 @@ function GamePage() {
                                 </Form>
                                 <div className="games" style={{height:"100%", overflow:"auto"}}>
                                     <div className="game-inner">
-                                        {new Array<ReactNode>(1).fill(<Streammer key={0} status="offline"/>)}
+                                        
+                                        {new Array<ReactNode>(1).fill(<Game key={0}/>)}
                                     </div>
                                 </div>
                             </>
@@ -57,8 +56,8 @@ function GamePage() {
                                     <img key={1} src="/assets/img/fortnite.jpg" alt="gow" className="game-img" />
                                     <img key={2} src="/assets/img/mario.jpg" alt="gow" className="game-img" />
                                 </div>
-                                <Separator/>
-                                <div className="details box">
+                                {/* <Separator/> */}
+                                <div className="details box not">
                                     <div>
                                         <Title2>
                                             Plataformas
@@ -122,7 +121,7 @@ function GamePage() {
 
                         <Container style={{marginTop: "4rem", padding:"2rem"}}>
                             <>
-                                <Title2 styles={{marginTop:"0"}}>Comentários</Title2>
+                                <Title2 styles={{marginTop:"0"}}>Comentário</Title2>
                                 <Form className="comment-form">
                                     <textarea name="comment" id="comment" rows={10} required></textarea>
                                     <button type="submit" className="btn">Comentar</button>
@@ -175,6 +174,20 @@ function GamePage() {
                 </>
             </Main>
         </>
+     );
+}
+
+function Game() {
+    return ( 
+        <a href="/" className="game">
+            <div className="game-img">
+                <img src="/assets/img/gow.jpg" alt="gow" />
+            </div>
+            <div className="game-body">
+                <strong className="game-title">God of War</strong>
+                <span>Acção | Aventura</span>
+            </div>
+        </a>
      );
 }
 
