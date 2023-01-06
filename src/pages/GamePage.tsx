@@ -1,12 +1,11 @@
-import { CSSProperties, MouseEventHandler, ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 import { Form } from "react-router-dom";
 import Container from "../components/Container";
 import Main from "../components/Main";
-import Modal, { useModal } from "../components/Modal";
 import Separator from "../components/Separator";
 import Title2 from "../components/Title2";
+import View from "../components/View";
 import "./GamePage.css";
-import HomePage from "./HomePage";
 
 const asideStyle: CSSProperties = {
     display:"flex",
@@ -18,26 +17,12 @@ const asideStyle: CSSProperties = {
 };
 
 function GamePage() {
-    const { isOpen, toggleOpen } = useModal();
-    const click: MouseEventHandler<HTMLButtonElement> = (evt)=>{
-        toggleOpen();
-        document.body.style.overflow="hidden";
-    }
+
+    
     return ( 
         <>
-            <Modal
-            onClose={()=>{
-                document.body.style.overflow="";
-            }}
-            isOpen={isOpen}
-            toggleOpen={toggleOpen}
-            >
-                <Container>
-                    <HomePage/>
-                </Container>
-            </Modal>
             <div className="cover">
-                <img src="/assets/img/gow.jpg" alt="God of war" />
+                <View src="/assets/img/gow.jpg" alt="God of war" />
                 <h2 className="game-title">God Of war</h2>
                 <div className="classification-game">
                     <span>16</span>
@@ -50,7 +35,7 @@ function GamePage() {
                             <>
                                 <Form method="get" className="search-form" style={{marginBottom:"20px"}}>
                                     <div className="search-form-inner">
-                                        <button type="button" className="btn" onClick={click}>
+                                        <button type="button" className="btn">
                                             Filtrar
                                         </button>
                                         <input type="text" name="search" required/>
@@ -70,9 +55,9 @@ function GamePage() {
                         <Container >
                             <>
                                 <div className="game-imgs">
-                                    <img key={0} src="/assets/img/gow.jpg" alt="gow" className="game-img" />
-                                    <img key={1} src="/assets/img/fortnite.jpg" alt="gow" className="game-img" />
-                                    <img key={2} src="/assets/img/mario.jpg" alt="gow" className="game-img" />
+                                    <View key={0} src="/assets/img/gow.jpg" alt="gow" className="game-img" />
+                                    <View key={1} src="/assets/img/fortnite.jpg" alt="gow" className="game-img" />
+                                    <View key={2} src="/assets/img/mario.jpg" alt="gow" className="game-img" />
                                 </div>
                                 {/* <Separator/> */}
                                 <div className="details box not">
@@ -194,6 +179,8 @@ function GamePage() {
         </>
      );
 }
+
+
 
 function Game() {
     return ( 

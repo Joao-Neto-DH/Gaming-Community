@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MouseEventHandler, ReactNode } from "react";
 import ReactDOM from "react-dom";
 import "./Modal.css";
@@ -17,22 +17,21 @@ function Modal(props: Props) {
         props.toggleOpen();
         props.onClose && props.onClose();
     }
-    // useEffect(()=>{
-    //     console.log("efeito")
-    // },[props])
+
+    document.body.style.overflow = `${props.isOpen ? "hidden":""}`
 
     return ( 
         <>
             {    
                 props.isOpen &&
                 ReactDOM.createPortal( 
-                    <div className="modal" id="modal">
-                        <button type="button" className="btn" onClick={closeCb}>✖</button>
+                    <div className="modal">
                         <div className="modal-content">
                             {
                                 props.children
                             }
                         </div>
+                        <button type="button" className="btn" onClick={closeCb}>✖</button>
                     </div>, 
                     document.getElementById("modal-root") as Element
                 )
