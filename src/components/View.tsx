@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState } from "react";
+import { CSSProperties, MouseEventHandler, useState } from "react";
 import Modal, { useModal } from "./Modal";
 
 type IMG = {src:string, alt:string, active?: boolean};
@@ -30,6 +30,7 @@ const View:React.FC<{src:string, alt:string, className?: string}> = ({src, alt, 
         <>
             <ImageView values={imgs} isOpen={isOpen} toggleOpen={toggleOpen} />
             <img 
+                style={{cursor:"pointer"}}
                 onClick={click}
                 src={src} 
                 alt={alt}
@@ -40,6 +41,13 @@ const View:React.FC<{src:string, alt:string, className?: string}> = ({src, alt, 
 
 const ImageView: React.FC<{values: IMG[], isOpen: boolean, toggleOpen: ()=>void}> = ({values, isOpen, toggleOpen}) => {
     const setSelected = useState(-1)[1];
+    const btn: CSSProperties = {
+        backgroundColor: "rgba(0,0,0,0.6)",
+        border: "1px solid rgb(var(--font-color))",
+        borderRadius: "50%",
+        padding: "16px",
+        margin: "0 10px"
+    }
     let num = -1;
 
     return (
@@ -47,7 +55,7 @@ const ImageView: React.FC<{values: IMG[], isOpen: boolean, toggleOpen: ()=>void}
             isOpen={isOpen}
             toggleOpen={toggleOpen}>
             <>
-                <div>
+                {/* <div> */}
                     {
                         values.map((el, i)=>{
                             if(el.active) num = i;
@@ -62,10 +70,11 @@ const ImageView: React.FC<{values: IMG[], isOpen: boolean, toggleOpen: ()=>void}
                                 }}/>
                         })
                     }
-                </div>
+                {/* </div> */}
                 {   values.length > 1 &&
-                    <div style={{position:"absolute",top: "50%",left: "50%"}}>
+                    <div style={{position:"absolute",top: "50%",left: "50%", transform:"translate(-50%, -50%)"}}>
                     <button 
+                    style={btn}
                     className="btn"
                     onClick={()=>{
                         values[num].active = false;
@@ -74,6 +83,7 @@ const ImageView: React.FC<{values: IMG[], isOpen: boolean, toggleOpen: ()=>void}
                         setSelected(num);
                     }}>⏪</button>
                     <button 
+                    style={btn}
                     className="btn"
                     onClick={()=>{
                         values[num].active = false;
