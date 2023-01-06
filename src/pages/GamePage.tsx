@@ -1,10 +1,12 @@
-import { CSSProperties, ReactNode } from "react";
+import { CSSProperties, MouseEventHandler, ReactNode } from "react";
 import { Form } from "react-router-dom";
 import Container from "../components/Container";
 import Main from "../components/Main";
+import Modal, { useModal } from "../components/Modal";
 import Separator from "../components/Separator";
 import Title2 from "../components/Title2";
 import "./GamePage.css";
+import HomePage from "./HomePage";
 
 const asideStyle: CSSProperties = {
     display:"flex",
@@ -16,8 +18,24 @@ const asideStyle: CSSProperties = {
 };
 
 function GamePage() {
+    const { isOpen, toggleOpen } = useModal();
+    const click: MouseEventHandler<HTMLButtonElement> = (evt)=>{
+        toggleOpen();
+        document.body.style.overflow="hidden";
+    }
     return ( 
         <>
+            <Modal
+            onClose={()=>{
+                document.body.style.overflow="";
+            }}
+            isOpen={isOpen}
+            toggleOpen={toggleOpen}
+            >
+                <Container>
+                    <HomePage/>
+                </Container>
+            </Modal>
             <div className="cover">
                 <img src="/assets/img/gow.jpg" alt="God of war" />
                 <h2 className="game-title">God Of war</h2>
@@ -32,7 +50,7 @@ function GamePage() {
                             <>
                                 <Form method="get" className="search-form" style={{marginBottom:"20px"}}>
                                     <div className="search-form-inner">
-                                        <button type="button" className="btn">
+                                        <button type="button" className="btn" onClick={click}>
                                             Filtrar
                                         </button>
                                         <input type="text" name="search" required/>

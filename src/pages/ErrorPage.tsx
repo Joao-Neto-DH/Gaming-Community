@@ -36,7 +36,7 @@ function ErrorPage() {
                             <i>Parece que algo deu errado<br/>Resolveremos esse erro o mais breve possível!</i>
                         </p>
                         <h2>{ error.statusText } - { error.status }</h2>
-                        <p>{ error.error.message }</p>
+                        { error.error && <p>{ error.error.message }</p>}
                     </div>
                 </Container>
             </div>
