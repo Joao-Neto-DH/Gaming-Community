@@ -28,7 +28,7 @@ const View:React.FC<{src:string, alt:string, className?: string}> = ({src, alt, 
 
     return ( 
         <>
-            <ImageView values={imgs} isOpen={isOpen} toggleOpen={toggleOpen} />
+            <ImageView imgs={imgs} isOpen={isOpen} toggleOpen={toggleOpen} />
             <img 
                 style={{cursor:"pointer"}}
                 onClick={click}
@@ -39,58 +39,67 @@ const View:React.FC<{src:string, alt:string, className?: string}> = ({src, alt, 
      );
 }
 
-const ImageView: React.FC<{values: IMG[], isOpen: boolean, toggleOpen: ()=>void}> = ({values, isOpen, toggleOpen}) => {
+const ImageView: React.FC<{imgs: IMG[], isOpen: boolean, toggleOpen: ()=>void}> = ({imgs, isOpen, toggleOpen}) => {
     const setSelected = useState(-1)[1];
-    const btn: CSSProperties = {
+    const [zoom, setZoom] = useState(false);
+
+    const btnStyle: CSSProperties = {
         backgroundColor: "rgba(0,0,0,0.6)",
         border: "1px solid rgb(var(--font-color))",
         borderRadius: "50%",
         padding: "16px",
-        margin: "0 10px"
+        margin: "0 10px",
     }
-    let num = -1;
+    let activeImage = -1;
 
+    function changeActiveImage(index: number) {
+        imgs[activeImage].active = false;
+        activeImage = index;
+        imgs[activeImage].active = true;
+        setSelected(activeImage);
+        setZoom(false);
+    }
+    
     return (
         <Modal
             isOpen={isOpen}
             toggleOpen={toggleOpen}>
             <>
-                {/* <div> */}
-                    {
-                        values.map((el, i)=>{
-                            if(el.active) num = i;
-
-                            return <img 
+                {
+                    imgs.map((el, i)=>{
+                        if(el.active) activeImage = i;
+                        
+                        return (
+                            <img 
+                                onClick={()=>setZoom(!zoom)}
                                 key={el.src} 
                                 src={el.src} 
                                 alt={el.alt} 
                                 style={{
-                                    width: "100%",
-                                    display: `${el.active ? "":"none"}`
-                                }}/>
-                        })
-                    }
-                {/* </div> */}
-                {   values.length > 1 &&
+                                    width: zoom ? "150%" : "100%",
+                                    display: `${el.active ? "":"none"}`,
+                                    cursor: zoom ? "zoom-out" : "zoom-in",
+                                    transition: "0.1s"
+                                }}
+                            />
+                        )
+                    })
+                }
+                {   imgs.length > 1 &&
                     <div style={{position:"absolute",top: "50%",left: "50%", transform:"translate(-50%, -50%)"}}>
                     <button 
-                    style={btn}
+                    style={btnStyle}
                     className="btn"
-                    onClick={()=>{
-                        values[num].active = false;
-                        num = (num-1)<0 ? values.length-1 : num-1;
-                        values[num].active = true;
-                        setSelected(num);
-                    }}>⏪</button>
+                    onClick={
+                        ()=>changeActiveImage((activeImage-1)<0 ? imgs.length-1 : activeImage-1)
+                    }>⏪</button>
+
                     <button 
-                    style={btn}
+                    style={btnStyle}
                     className="btn"
-                    onClick={()=>{
-                        values[num].active = false;
-                        num = (num+1)%values.length;
-                        values[num].active = true;
-                        setSelected(num);
-                    }}>⏩</button>
+                    onClick={
+                        ()=>changeActiveImage((activeImage+1)%imgs.length)
+                    }>⏩</button>
                     </div>
                 }
             </>
