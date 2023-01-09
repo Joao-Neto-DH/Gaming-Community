@@ -1,4 +1,5 @@
-import { MouseEventHandler, useState } from "react";
+import { MouseEventHandler, useContext } from "react";
+import ThemeContext from "../utils/ThemeContext";
 import "./Header.css";
 
 interface MenuItem{
@@ -7,15 +8,11 @@ interface MenuItem{
 }
 
 function Header() {
-    const [isThemeLight, setIsThemeLight] = useState(true);
+    const { isLight, toggleTheme } = useContext(ThemeContext);
 
     const themeChange: MouseEventHandler<HTMLAnchorElement> = (evt) =>{
         evt.preventDefault();
-        const res = document.body.classList.contains(isThemeLight ? "theme-light" : "theme-dark");
-        if(!res)
-            document.body.classList.add(isThemeLight ? "theme-light" : "theme-dark");
-        document.body.classList.replace(isThemeLight ? "theme-light" : "theme-dark", !isThemeLight ? "theme-light" : "theme-dark");
-        setIsThemeLight(!isThemeLight);
+        toggleTheme();
     }
 
     const links : Array<MenuItem> = [
@@ -38,7 +35,7 @@ function Header() {
                                     </li>
                                 )
                             }
-                            <li><a href="#/theme" onClick={themeChange}>{isThemeLight ? "🌞" : "🌙"}</a></li>
+                            <li><a href="#/theme" onClick={themeChange}>{isLight ? "🌞" : "🌙"}</a></li>
                         </ul>
                     </nav>
                 </div>
