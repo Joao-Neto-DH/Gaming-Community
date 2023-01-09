@@ -1,5 +1,6 @@
 import React from "react";
 import { MouseEventHandler } from "react";
+import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import "./LoginPage.css";
@@ -45,7 +46,7 @@ const LoginPage: React.FC<{}> = ()=>{
                                         <label htmlFor="password2">Senha</label>
                                         <input type="password" name="password" id="password2" required/>
                                     </div>
-                                    <a href="/login/password/recovery">Esqueci a senha</a>
+                                    <Link to="/login/password/recovery">Esqueci a senha</Link>
                                     <button type="submit" className="btn">Entrar</button>
                                     <button type="button" className="btn secondary" onClick={changeLoginForm}>Criar Conta</button>
                                 </form>
@@ -55,9 +56,9 @@ const LoginPage: React.FC<{}> = ()=>{
                                     <hr />
                                 </div>
                                 <ul>
-                                    <li><a href="/facebook">F</a></li>
-                                    <li><a href="/facebook">G</a></li>
-                                    <li><a href="/facebook">I</a></li>
+                                    <li><Link to="/facebook">F</Link></li>
+                                    <li><Link to="/facebook">G</Link></li>
+                                    <li><Link to="/facebook">I</Link></li>
                                 </ul>
                             </>
                         </Container>
@@ -98,9 +99,9 @@ const LoginPage: React.FC<{}> = ()=>{
                                     <hr />
                                 </div>
                                 <ul>
-                                    <li><a href="/facebook">F</a></li>
-                                    <li><a href="/facebook">G</a></li>
-                                    <li><a href="/facebook">I</a></li>
+                                    <li><Link to="/facebook">F</Link></li>
+                                    <li><Link to="/facebook">G</Link></li>
+                                    <li><Link to="/facebook">I</Link></li>
                                 </ul>
                             </>
                         </Container>
