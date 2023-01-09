@@ -9,6 +9,7 @@ import Separator from "../components/Separator";
 import Streammer from "../components/Streammer";
 import Title1 from "../components/Title1";
 import Title2 from "../components/Title2";
+import { useTitle } from "../utils/useTitle";
 
 const styleContainer: React.CSSProperties = {
   width: "90%", 
@@ -18,6 +19,7 @@ const styleContainer: React.CSSProperties = {
 };
 
 function HomePage() {
+    useTitle("4")
     return ( 
         <>
             <Carousel/>

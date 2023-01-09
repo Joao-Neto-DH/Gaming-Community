@@ -5,6 +5,7 @@ import Container from "../components/Container";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Newsletter from "../components/Newsletter";
+import { useTitle } from "../utils/useTitle";
 import "./ErrorPage.css";
 
 const style: CSSProperties = {
@@ -14,15 +15,17 @@ const style: CSSProperties = {
     transform: "translate(-50%, -25%)"
 }
 
-function ErrorPage() {
-    type Error = {
-        statusText: string,
-        status: number,
-        error: {
-            message: string
-        }
+type Error = {
+    statusText: string,
+    status: number,
+    error: {
+        message: string
     }
+}
+
+function ErrorPage() {
     const error: Error = useRouteError() as Error;
+    useTitle(error.status.toString());
     
     return ( 
         <>

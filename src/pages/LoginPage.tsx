@@ -3,9 +3,11 @@ import { MouseEventHandler } from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Header from "../components/Header";
+import { useTitle } from "../utils/useTitle";
 import "./LoginPage.css";
 
 const LoginPage: React.FC<{}> = ()=>{
+    const setTitle = useTitle("Entrar");
     const login = React.createRef<HTMLDivElement>();
     const createAccount = React.createRef<HTMLDivElement>();
     const changeLoginForm: MouseEventHandler<HTMLButtonElement> = (evt) =>{
@@ -14,9 +16,11 @@ const LoginPage: React.FC<{}> = ()=>{
         if(login.current?.classList.contains(active)){
             login.current.classList.remove(active)
             createAccount.current?.classList.add(active);
+            setTitle("Cadastrar")
         }else{
             login.current?.classList.add(active)
             createAccount.current?.classList.remove(active);
+            setTitle("Entrar")
         }
     }
 
