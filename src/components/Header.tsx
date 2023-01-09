@@ -1,9 +1,10 @@
 import { MouseEventHandler, useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
 import ThemeContext from "../utils/ThemeContext";
 import "./Header.css";
 
-interface MenuItem{
-    link? : string;
+type MenuItem = {
+    link : string;
     title: string; 
 }
 
@@ -31,11 +32,11 @@ function Header() {
                             {
                                 links.map(
                                     (value, index) => <li key={index}>
-                                        <a href={value.link} className={document.location.pathname ===value.link ? "active":""}>{value.title}</a>
+                                        <NavLink to={value.link} className={({isActive}) => isActive ? "active" : "" }>{value.title}</NavLink>
                                     </li>
                                 )
                             }
-                            <li><a href="#/theme" onClick={themeChange}>{isLight ? "🌞" : "🌙"}</a></li>
+                            <li><Link to="#/theme" onClick={themeChange}>{isLight ? "🌞" : "🌙"}</Link></li>
                         </ul>
                     </nav>
                 </div>

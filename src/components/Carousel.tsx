@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import { Link } from "react-router-dom";
 import "./Carousel.css";
 import Light from "./Light";
 
@@ -17,7 +18,7 @@ const Carousel = () => {
                 <h2>Something to say</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/>
                      Nisi iste error dolore repudiandae, dolor maiores.</p>
-                     <a href="/" className="btn btn-carousel">Scroll Down</a>
+                     <Link to="/" className="btn btn-carousel">Scroll Down</Link>
             </div>
             {lights}
         </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer(){
@@ -12,18 +13,18 @@ function Footer(){
                 <div className="footer-group">
                     <h4 className="group-title">Redes Sociais</h4>
                     <ul>
-                        <li><a href="/">Linkedlin</a></li>
-                        <li><a href="/">Facebook</a></li>
-                        <li><a href="/">Instagram</a></li>
-                        <li><a href="/">Whatsapp</a></li>
+                        <li><Link to="/">Linkedlin</Link></li>
+                        <li><Link to="/">Facebook</Link></li>
+                        <li><Link to="/">Instagram</Link></li>
+                        <li><Link to="/">Whatsapp</Link></li>
                     </ul>
                 </div>
                 <div className="footer-group">
                     <h4 className="group-title">Patrocinadores</h4>
                     <ul>
-                        <li><a href="/">Nintendo</a></li>
-                        <li><a href="/">Sony</a></li>
-                        <li><a href="/">Comic.Com</a></li>
+                        <li><Link to="/">Nintendo</Link></li>
+                        <li><Link to="/">Sony</Link></li>
+                        <li><Link to="/">Comic.Com</Link></li>
                     </ul>
                 </div>
             </div>

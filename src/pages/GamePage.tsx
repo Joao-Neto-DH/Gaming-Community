@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode } from "react";
-import { Form } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import Container from "../components/Container";
 import Main from "../components/Main";
 import Separator from "../components/Separator";
@@ -141,7 +141,7 @@ function GamePage() {
                                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
                                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
                                                 <div className="comment-footer">
-                                                    <a href="/">Responder</a>
+                                                    <Link to="/">Responder</Link>
                                                     <button type="button" className="btn">👍</button>
                                                 </div>
                                                 <ul>
@@ -156,7 +156,7 @@ function GamePage() {
                                                                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
                                                                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
                                                                     <div className="comment-footer">
-                                                                        <a href="/">Responder</a>
+                                                                        <Link to="/">Responder</Link>
                                                                         <button type="button" className="btn">👍</button>
                                                                     </div>
                                                                     <ul>
@@ -184,7 +184,7 @@ function GamePage() {
 
 function Game() {
     return ( 
-        <a href="/" className="game">
+        <Link to="/" className="game">
             <div className="game-img">
                 <img src="/assets/img/gow.jpg" alt="gow" />
             </div>
@@ -192,7 +192,7 @@ function Game() {
                 <strong className="game-title">God of War</strong>
                 <span>Acção | Aventura</span>
             </div>
-        </a>
+        </Link>
      );
 }
 

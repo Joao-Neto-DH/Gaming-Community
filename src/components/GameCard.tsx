@@ -1,4 +1,5 @@
 import { MouseEventHandler, ReactElement, useState } from "react";
+import { Link } from "react-router-dom";
 import "./GameCard.css";
 
 function GameCard() {
@@ -30,7 +31,7 @@ function GameCard() {
             <img src="/assets/img/gow.jpg" alt="God of War" className="card-img"/>
             <div className="card-body">
                 <div className="card-header">
-                    <h4 className="card-title"><a href="/game">God of War</a></h4>
+                    <h4 className="card-title"><Link to="/game">God of War</Link></h4>
                     <ul className="card-stars">
                         { stars.map((str, i)=><li key={i} className={(starsSelected>=i)?"active":""} onClick={turnON}>{str}</li>) }
                     </ul>
