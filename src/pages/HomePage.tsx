@@ -19,7 +19,8 @@ const styleContainer: React.CSSProperties = {
 };
 
 function HomePage() {
-    useTitle("4")
+    useTitle("")
+    
     return ( 
         <>
             <Carousel/>

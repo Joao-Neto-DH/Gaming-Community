@@ -35,18 +35,26 @@ const route = createBrowserRouter([
 ]);
 
 
-function App() {
-  const [light, setLight] = useState(true);
+function App() {  
+  const themeLight = "theme-light", themeDark = "theme-dark";
+  
+  const [light, setLight] = useState(!(localStorage.getItem(themeLight) === "off"));
+  
+  const res = document.body.classList.contains(light ? themeLight : themeDark);
+  !res && document.body.classList.add(light ? themeLight : themeDark);
   
   return (
     <ThemeContext.Provider value={{
       isLight: light,
       toggleTheme: ()=>{
-        const res = document.body.classList.contains(light ? "theme-light" : "theme-dark");
-        if(!res)
-            document.body.classList.add(light ? "theme-light" : "theme-dark");
-        document.body.classList.replace(light ? "theme-light" : "theme-dark", !light ? "theme-light" : "theme-dark");
-        setLight((light=>!light))
+        document.body.classList.replace(light ? themeLight : themeDark, !light ? themeLight : themeDark);
+        setLight((light=>{
+          try {
+            localStorage.setItem(themeLight, !light ? "on" : "off");
+          } catch (error) {}
+          return !light
+        }))
+        
       }
     }}>
       <RouterProvider router={route}/>
