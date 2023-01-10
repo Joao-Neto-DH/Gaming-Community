@@ -43,8 +43,8 @@ function GameCard() {
                 <p className="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sapiente unde fuga ullam explicabo.</p>
             </div>
             <div className="card-footer">
-                <button>First#1</button>
-                <button>First#1</button>
+                <button>🌟</button>
+                <button>⭐</button>
             </div>
         </div>
      );

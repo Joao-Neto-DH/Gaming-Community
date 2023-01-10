@@ -32,6 +32,10 @@
 .load .card-footer > *{
     height: 12px;
 }
+.load .card-footer > *::before{
+    content: "";
+    border: none;
+}
 @keyframes loading {
     from{
         background-position: 100%;
