@@ -19,41 +19,9 @@ const styleContainer: React.CSSProperties = {
   borderRadius:"8px"
 };
 
-// type Game = {
-//     type: "SUCCESS" | "ERROR" | "LOADING",
-//     games: GameResponse[],
-//     error?: ErrorResponse
-// }
-
-// type Action = {type: "SUCCESS" | "ERROR" | "LOADING", response: any}
-
-// function reducer(state: Game, action: Action): Game {    
-//     switch (action.type) {
-//         case "SUCCESS":
-//             return {
-//                         type: "SUCCESS",
-//                         games: [...state.games, ...action.response.datas],
-//                         error: undefined
-//                     };
-
-//         case "ERROR":
-//             return {
-//                         type: "ERROR",
-//                         games: state.games,
-//                         error: action.response
-//                     };
-    
-//         default:
-//             return state;
-//     }
-// }
-
-// const initState: Game = {type: "LOADING", games: [], error: undefined};
-
 function HomePage() {
     useTitle("");
-    let page = 1;
-    const { response, setPage } = useLoadGame(page);
+    const { response, nextPage } = useLoadGame();
 
     return ( 
         <>
@@ -68,7 +36,7 @@ function HomePage() {
                         <Separator/>
                         <div style={{display:"grid", gridTemplateColumns:"repeat(4, 1fr)",gap:"2rem", alignItems:"flex-start"}}>
                             {
-                                response.games?.map(game=><GameCard key={game.id}/>)
+                                response.games?.map(game=><GameCard game={game} key={game.id}/>)
                             }
                             {
                                 response.loading &&
@@ -79,9 +47,8 @@ function HomePage() {
                                 </>
                             }
                             <button 
-                                onClick={()=>{
-                                    // dispatch({ type: "LOADING", response: {datas: undefined}});                    
-                                    setPage(page + 1);
+                                onClick={()=>{                   
+                                    nextPage();
                                 }}
                                 style={{
                                     gridColumn: "1/5"

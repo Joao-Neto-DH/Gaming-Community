@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { Game } from "../@types/Game";
 
 type Response = {games?: Game[], error?: any, loading: boolean};
@@ -16,19 +16,21 @@ const reducer = (state: Response, action: Action): Response => {
 }
 
 function useLoadGame(page = 1, items = 10) {
+    const [pageNum, setPageNum] = useState(page);
     const [response, dispatch] = useReducer<(state: Response, action: Action)=>Response, Response>(reducer, initState, response => response);
 
     useEffect(()=>{
-        axios.get("http://localhost:3024/games")
+        axios.get("http://localhost:3024/games", {params: {"page": pageNum }})
             .then(({data})=>dispatch({datas: data.datas, type: "DONE"}))
             .catch(err=>dispatch({datas: err, type: "ERROR"}));
-    }, [response]);
+    }, [pageNum]);
 
-    function setPage(page: number){
+    function nextPage(page: number = 1){
         dispatch({ datas: undefined, type: "LOADING" });
+        setPageNum(p=>p+page);
     }
 
-    return { response, setPage };
+    return { response, nextPage };
 }
 
 export { useLoadGame }

@@ -1,8 +1,9 @@
 import { MouseEventHandler, ReactElement, useState } from "react";
 import { Link } from "react-router-dom";
+import { Game } from "../@types/Game";
 import "./GameCard.css";
 
-function GameCard() {
+const GameCard: React.FC<{game: Game}> = ({ game }) => {
     const [starsSelected, setStarsSelected] = useState(2);
 
     let stars = new Array<ReactElement<HTMLOrSVGElement>>(5).fill(star());
@@ -28,19 +29,26 @@ function GameCard() {
 
     return ( 
         <div className="card-game">
-            <img src="/assets/img/gow.jpg" alt="God of War" className="card-img"/>
+            <img src="/assets/img/gow.jpg" alt={ game.title.toLowerCase() } className="card-img"/>
             <div className="card-body">
                 <div className="card-header">
-                    <h4 className="card-title"><Link to="/game">God of War</Link></h4>
-                    <ul className="card-stars">
+                    <h4 className="card-title"><Link to="/game">{ game.title }</Link></h4>
+                    <div className="ad">
+                        <ul className="ad-category">
+                            { game.genre.map((genre, index)=><li key={index}>{genre}</li>) }
+                        </ul>
+                    </div>
+                    <ul className="card-stars" style={{margin:"0"}}>
                         { stars.map((str, i)=><li key={i} className={(starsSelected>=i)?"active":""} onClick={turnON}>{str}</li>) }
                     </ul>
+                    <span style={{fontSize:"12px", color:"green", paddingRight:"10px"}}>👍: {game._count.likes} </span>
+                    <span style={{fontSize:"12px", color:"red"}}>👎: {game._count.comments}</span>
                     <button className="card-game-info">
                         <span style={{width:"17px", height:"16px", display:"inline-block"}}>i</span>
                     </button>
                 </div>
                 <hr style={{opacity:"0.6"}}/>
-                <p className="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sapiente unde fuga ullam explicabo.</p>
+                <p className="card-description">{ game.description }</p>
             </div>
             <div className="card-footer">
                 <button>👍</button>
