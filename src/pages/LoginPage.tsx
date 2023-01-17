@@ -3,7 +3,7 @@ import { MouseEventHandler } from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Header from "../components/Header";
-import { useTitle } from "../utils/useTitle";
+import { useTitle } from "../hooks/useTitle";
 import "./LoginPage.css";
 
 const LoginPage: React.FC<{}> = ()=>{

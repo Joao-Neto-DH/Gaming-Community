@@ -5,7 +5,7 @@ import Main from "../components/Main";
 import Separator from "../components/Separator";
 import Title2 from "../components/Title2";
 import View from "../components/View";
-import { useTitle } from "../utils/useTitle";
+import { useTitle } from "../hooks/useTitle";
 import "./GamePage.css";
 
 const asideStyle: CSSProperties = {
@@ -19,7 +19,7 @@ const asideStyle: CSSProperties = {
 
 function GamePage() {
 
-    /* const setTitle = */useTitle("Jogos");
+    useTitle("Jogos");
     
     return ( 
         <>

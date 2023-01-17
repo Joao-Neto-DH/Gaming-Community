@@ -5,7 +5,7 @@ import Container from "../components/Container";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Newsletter from "../components/Newsletter";
-import { useTitle } from "../utils/useTitle";
+import { useTitle } from "../hooks/useTitle";
 import "./ErrorPage.css";
 
 const style: CSSProperties = {

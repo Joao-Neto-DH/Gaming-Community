@@ -9,7 +9,8 @@ import Separator from "../components/Separator";
 import Streammer from "../components/Streammer";
 import Title1 from "../components/Title1";
 import Title2 from "../components/Title2";
-import { useTitle } from "../utils/useTitle";
+import { useLoadGame } from "../hooks/useLoadGame";
+import { useTitle } from "../hooks/useTitle";
 
 const styleContainer: React.CSSProperties = {
   width: "90%", 
@@ -18,9 +19,43 @@ const styleContainer: React.CSSProperties = {
   borderRadius:"8px"
 };
 
-function HomePage() {
-    useTitle("")
+// type Game = {
+//     type: "SUCCESS" | "ERROR" | "LOADING",
+//     games: GameResponse[],
+//     error?: ErrorResponse
+// }
+
+// type Action = {type: "SUCCESS" | "ERROR" | "LOADING", response: any}
+
+// function reducer(state: Game, action: Action): Game {    
+//     switch (action.type) {
+//         case "SUCCESS":
+//             return {
+//                         type: "SUCCESS",
+//                         games: [...state.games, ...action.response.datas],
+//                         error: undefined
+//                     };
+
+//         case "ERROR":
+//             return {
+//                         type: "ERROR",
+//                         games: state.games,
+//                         error: action.response
+//                     };
     
+//         default:
+//             return state;
+//     }
+// }
+
+// const initState: Game = {type: "LOADING", games: [], error: undefined};
+
+function HomePage() {
+    useTitle("");
+    let page = 1;
+    const { response, setPage } = useLoadGame(page);
+    console.log(response);
+
     return ( 
         <>
             <Carousel/>
@@ -29,15 +64,31 @@ function HomePage() {
                 <main style={{width:"100%"}}>
                 <Container style={styleContainer}>
                     <>
-                    <Title1>Jogo Mais Falado Na Comunidade</Title1>
-                    <Ad></Ad>
-                    <Separator/>
-                    <div style={{display:"grid", gridTemplateColumns:"repeat(4, 1fr)",gap:"2rem", alignItems:"flex-start"}}>
-                        <GameCard/>
-                        <GameCardLoading/>
-                        <GameCardLoading/>
-                        <GameCardLoading/>
-                    </div>
+                        <Title1>Jogo Mais Falado Na Comunidade</Title1>
+                        <Ad></Ad>
+                        <Separator/>
+                        <div style={{display:"grid", gridTemplateColumns:"repeat(4, 1fr)",gap:"2rem", alignItems:"flex-start"}}>
+                            {
+                                response.games?.map(game=><GameCard key={game.id}/>)
+                            }
+                            {
+                                response.loading &&
+                                <>
+                                    <GameCardLoading/>
+                                    <GameCardLoading/>
+                                    <GameCardLoading/>
+                                </>
+                            }
+                            <button 
+                                onClick={()=>{
+                                    // dispatch({ type: "LOADING", response: {datas: undefined}});                    
+                                    setPage(page + 1);
+                                }}
+                                style={{
+                                    gridColumn: "1/5"
+                                }}
+                            >contar</button>
+                        </div>
                     </>
                 </Container>
                 </main>
