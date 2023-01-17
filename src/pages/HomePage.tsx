@@ -54,7 +54,6 @@ function HomePage() {
     useTitle("");
     let page = 1;
     const { response, setPage } = useLoadGame(page);
-    console.log(response);
 
     return ( 
         <>
