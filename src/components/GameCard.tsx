@@ -32,7 +32,7 @@ const GameCard: React.FC<{game: Game}> = ({ game }) => {
             <img src="/assets/img/gow.jpg" alt={ game.title.toLowerCase() } className="card-img"/>
             <div className="card-body">
                 <div className="card-header">
-                    <h4 className="card-title"><Link to="/game">{ game.title }</Link></h4>
+                    <h4 className="card-title"><Link to={`/game/${game.id}`}>{ game.title }</Link></h4>
                     <div className="ad">
                         <ul className="ad-category">
                             { game.genre.map((genre, index)=><li key={index}>{genre}</li>) }

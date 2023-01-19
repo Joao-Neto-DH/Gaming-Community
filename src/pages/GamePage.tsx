@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode } from "react";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useParams } from "react-router-dom";
 import Container from "../components/Container";
 import Main from "../components/Main";
 import Separator from "../components/Separator";
@@ -185,6 +185,8 @@ function GamePage() {
 
 
 function Game() {
+    const params = useParams();
+    
     return ( 
         <Link to="/" className="game">
             <div className="game-img">

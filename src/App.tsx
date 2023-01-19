@@ -22,7 +22,7 @@ const route = createBrowserRouter([
         element: <HomePage/>
       },
       {
-        path:"/game",
+        path:"/game/:id",
         element: <GamePage/>
       }
     ],
