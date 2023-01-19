@@ -3,7 +3,7 @@ import { useEffect, useReducer, useState } from "react";
 import { Game } from "../@types/Game";
 
 type Response = {games?: Game[], error?: any, loading: boolean};
-type Action = {type: "DONE" | "LOADING" | "ERROR", datas?: any};
+export type Action = {type: "DONE" | "LOADING" | "ERROR", datas?: any};
 
 const initState: Response = { loading: true };
 
@@ -15,7 +15,7 @@ const reducer = (state: Response, action: Action): Response => {
     }
 }
 
-function useLoadGame(page = 1, items = 10) {
+function useLoadGames(page = 1, items = 10) {
     const [pageNum, setPageNum] = useState(page);
     const [response, dispatch] = useReducer<(state: Response, action: Action)=>Response, Response>(reducer, initState, response => response);
 
@@ -33,4 +33,4 @@ function useLoadGame(page = 1, items = 10) {
     return { response, nextPage };
 }
 
-export { useLoadGame }
+export { useLoadGames }

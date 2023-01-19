@@ -9,7 +9,7 @@ import Separator from "../components/Separator";
 import Streammer from "../components/Streammer";
 import Title1 from "../components/Title1";
 import Title2 from "../components/Title2";
-import { useLoadGame } from "../hooks/useLoadGames";
+import { useLoadGames } from "../hooks/useLoadGames";
 import { useTitle } from "../hooks/useTitle";
 
 const styleContainer: React.CSSProperties = {
@@ -21,7 +21,7 @@ const styleContainer: React.CSSProperties = {
 
 function HomePage() {
     useTitle("");
-    const { response, nextPage } = useLoadGame();
+    const { response, nextPage } = useLoadGames();
 
     return ( 
         <>

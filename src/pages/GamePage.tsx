@@ -5,6 +5,7 @@ import Main from "../components/Main";
 import Separator from "../components/Separator";
 import Title2 from "../components/Title2";
 import View from "../components/View";
+import { useLoadGame } from "../hooks/useLoadGame";
 import { useTitle } from "../hooks/useTitle";
 import "./GamePage.css";
 
@@ -18,8 +19,9 @@ const asideStyle: CSSProperties = {
 };
 
 function GamePage() {
-
     useTitle("Jogos");
+    const { id } = useParams();
+    const game   = useLoadGame(id);
     
     return ( 
         <>
@@ -133,45 +135,7 @@ function GamePage() {
                                 </Form>
                                 <Separator />
                                 <div className="comment-section">
-                                    <div className="comment">
-                                        <div className="comment-header">
-                                            <img src="/logo192.png" alt="comment" className="comment-img" />
-                                            <span>04/01/2023</span>
-                                        </div>
-                                        <div className="comment-body">
-                                            <div>
-                                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
-                                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
-                                                <div className="comment-footer">
-                                                    <Link to="/">Responder</Link>
-                                                    <button type="button" className="btn">👍</button>
-                                                </div>
-                                                <ul>
-                                                    <li>
-                                                        <div className="comment">
-                                                            <div className="comment-header">
-                                                                <img src="/logo192.png" alt="comment" className="comment-img" />
-                                                                <span>04/01/2023</span>
-                                                            </div>
-                                                            <div className="comment-body">
-                                                                <div>
-                                                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
-                                                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
-                                                                    <div className="comment-footer">
-                                                                        <Link to="/">Responder</Link>
-                                                                        <button type="button" className="btn">👍</button>
-                                                                    </div>
-                                                                    <ul>
-                                                                        
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    { game.game?.comments.map(comment=><Comment key={comment.id} comment={comment} />) }
                                 </div>
                             </>
                         </Container>
@@ -182,11 +146,7 @@ function GamePage() {
      );
 }
 
-
-
 function Game() {
-    const params = useParams();
-    
     return ( 
         <Link to="/" className="game">
             <div className="game-img">
@@ -198,6 +158,49 @@ function Game() {
             </div>
         </Link>
      );
+}
+
+function Comment({ comment }:any){    
+    return (
+        <div className="comment">
+            <div className="comment-header" style={{alignItems:"center"}}>
+                <img src="/logo192.png" alt="comment" className="comment-img" />
+                <span>{ comment.User.name }</span>
+            </div>
+            <div className="comment-body">
+                <div>
+                    <pre>{comment.description}</pre>
+                    <div className="comment-footer">
+                        <Link to="/">Responder</Link>
+                        <button type="button" className="btn">👍</button>
+                    </div>
+                    <ul>
+                        <li>
+                            <div className="comment">
+                                <div className="comment-header">
+                                    <img src="/logo192.png" alt="comment" className="comment-img" />
+                                    <span>04/01/2023</span>
+                                </div>
+                                <div className="comment-body">
+                                    <div>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, ipsum expedita vel nemo ab possimus maxime obcaecati eos non culpa omnis debitis hic enim perspiciatis cupiditate nostrum tempora sequi tenetur.</p>
+                                        <div className="comment-footer">
+                                            <Link to="/">Responder</Link>
+                                            <button type="button" className="btn">👍</button>
+                                        </div>
+                                        <ul>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default GamePage;
