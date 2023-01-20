@@ -62,6 +62,7 @@ function GamePage() {
                                     <View key={0} src="/assets/img/gow.jpg" alt="gow" className="game-img" />
                                     <View key={1} src="/assets/img/fortnite.jpg" alt="gow" className="game-img" />
                                     <View key={2} src="/assets/img/mario.jpg" alt="gow" className="game-img" />
+                                    {game.game?.screenshoots.map(img=><View key={img.image_path} src={img.image_path} alt={img.image_path} className="game-img"/>)}
                                 </div>
                                 {/* <Separator/> */}
                                 <div className="details box not">

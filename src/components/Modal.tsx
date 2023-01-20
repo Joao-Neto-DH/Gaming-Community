@@ -40,8 +40,8 @@ function Modal(props: Props) {
      );
 }
 
-export function useModal(){
-    const [isOpen, setOpen] = useState(false);
+export function useModal(opened = false){
+    const [isOpen, setOpen] = useState(opened);
 
     function toggleOpen() {
         setOpen(!isOpen);

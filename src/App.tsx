@@ -9,7 +9,7 @@ import HomePage from './pages/HomePage';
 import MainPage from './pages/MainPage';
 import ErrorPage from './pages/ErrorPage';
 import GamePage from './pages/GamePage';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ThemeContext from './utils/ThemeContext';
 
 const route = createBrowserRouter([
@@ -37,12 +37,15 @@ const route = createBrowserRouter([
 
 function App() {  
   const themeLight = "theme-light", themeDark = "theme-dark";
+  const [light, setLight] = useState(true);
   
-  const [light, setLight] = useState(!(localStorage.getItem(themeLight) === "off"));
-  
-  const res = document.body.classList.contains(light ? themeLight : themeDark);
-  !res && document.body.classList.add(light ? themeLight : themeDark);
-  
+  useEffect(()=>{
+    const lightOn = !(localStorage.getItem(themeLight) === "off");
+    setLight(lightOn);
+    const res = document.body.classList.contains(lightOn ? themeLight : themeDark);
+    !res && document.body.classList.add(lightOn ? themeLight : themeDark);
+  }, []);
+
   return (
     <ThemeContext.Provider value={{
       isLight: light,
