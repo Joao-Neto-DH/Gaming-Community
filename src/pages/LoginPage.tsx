@@ -1,17 +1,60 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { MouseEventHandler } from "react";
-import { Link } from "react-router-dom";
+import { Form, Link, useActionData } from "react-router-dom";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import { useTitle } from "../hooks/useTitle";
+import { signin } from "./login/login";
 import "./LoginPage.css";
+
+export async function actionLogin({request}: any){
+    const formData = await request.formData();
+    const datas = Object.fromEntries(formData);   
+
+    return await signin(datas as any)
+}
+
+function error412(data: any){
+    const { errors, message } = data;
+                
+                if (errors instanceof Array) {
+                    errors.forEach(error=>{
+                        const input = document.querySelector(`[name=${error.param}]`);
+                        
+                        if(input){
+                            const parent = input.parentElement;
+                            parent?.classList.add("invalid");
+                        }
+                    });
+                }else{
+                    alert(message)
+                }
+}
+
+function success200(data: any) {
+    const {user, token} = data;
+    console.log(user);
+}
 
 const LoginPage: React.FC<{}> = ()=>{
     const setTitle = useTitle("Entrar");
-    const login = React.createRef<HTMLDivElement>();
-    const createAccount = React.createRef<HTMLDivElement>();
-    const changeLoginForm: MouseEventHandler<HTMLButtonElement> = (evt) =>{
-        // setCreateAccountForm(!isCreateAccountForm);
+    const login = useRef<HTMLDivElement>(null);
+    const createAccount = useRef<HTMLDivElement>(null);
+
+    const sub: any = useActionData();
+    
+    useEffect(()=>{
+        if (sub) {
+            switch (sub.status) {
+                case 412: error412(sub.data); break;
+                case 200: success200(sub.data); break;
+            
+                default: alert(JSON.stringify(sub.data)); break;
+            }            
+        }
+    }, [sub]);
+
+    const changeLoginForm: MouseEventHandler<HTMLButtonElement> = () =>{
         const active = "active";
         if(login.current?.classList.contains(active)){
             login.current.classList.remove(active)
@@ -39,8 +82,8 @@ const LoginPage: React.FC<{}> = ()=>{
                             <>
                                 <h2>LOGIN</h2>
                                 <hr />
-                                <form method="post">
-                                    <div className="input-box invalid">
+                                <Form method="post">
+                                    <div className="input-box">
                                         <label htmlFor="email2">
                                             Email
                                         </label>
@@ -53,7 +96,7 @@ const LoginPage: React.FC<{}> = ()=>{
                                     <Link to="/login/password/recovery">Esqueci a senha</Link>
                                     <button type="submit" className="btn">Entrar</button>
                                     <button type="button" className="btn secondary" onClick={changeLoginForm}>Criar Conta</button>
-                                </form>
+                                </Form>
                                 <div className="or-divider">
                                     <hr />
                                     ou
@@ -87,12 +130,12 @@ const LoginPage: React.FC<{}> = ()=>{
                                         <input type="email" name="email" id="email" required />
                                     </div>
                                     <div className="input-box invalid">
-                                        <label htmlFor="password">Senha</label>
-                                        <input type="password" name="password" id="password" required/>
+                                        <label htmlFor="password-create">Senha</label>
+                                        <input type="password" name="password" id="password-create" autoComplete="true" required/>
                                     </div>
                                     <div className="input-box invalid">
                                         <label htmlFor="password-confirm">Confirmar Senha</label>
-                                        <input type="password" name="password-confirm" id="password-confirm" required/>
+                                        <input type="password" name="password-confirm" id="password-confirm" autoComplete="true" required/>
                                     </div>
                                     <button type="submit" className="btn">Entrar</button>
                                     <button type="button" className="btn secondary" onClick={changeLoginForm}>Já tenho uma conta</button>

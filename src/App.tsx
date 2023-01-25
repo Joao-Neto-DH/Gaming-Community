@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 import './App.css';
-import LoginPage from './pages/LoginPage';
+import LoginPage, { actionLogin } from './pages/LoginPage';
 import {
   createBrowserRouter,
   RouterProvider
@@ -30,6 +30,8 @@ const route = createBrowserRouter([
   },
   {
     path: "/login",
+    action: actionLogin,
+    errorElement: <ErrorPage/>,
     element: <LoginPage/>
   },
 ]);

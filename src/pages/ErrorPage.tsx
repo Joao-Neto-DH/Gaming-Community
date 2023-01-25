@@ -25,7 +25,7 @@ type Error = {
 
 function ErrorPage() {
     const error: Error = useRouteError() as Error;
-    useTitle(error.status.toString());
+    useTitle(error.status?.toString() || "Erro");
     
     return ( 
         <>
